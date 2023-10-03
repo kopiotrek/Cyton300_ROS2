@@ -1,0 +1,20 @@
+version: '3'
+services:
+  cyton_service:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    image: cyton_simulation
+    user: ros
+    network_mode: host
+    ipc: host
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - ./docker/cyton_ros2:/my_source_code
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    devices:
+      - /dev/dri:/dev/dri
+    stdin_open: true 
+    tty: true

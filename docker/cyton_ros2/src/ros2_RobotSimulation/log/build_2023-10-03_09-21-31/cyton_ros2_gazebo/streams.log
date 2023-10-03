@@ -1,0 +1,36 @@
+[0.034s] Invoking command in '/source_code/src/ros2_RobotSimulation/build/cyton_ros2_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ws_moveit/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake /source_code/src/ros2_RobotSimulation/Cyton/cyton_ros2_gazebo -DCMAKE_INSTALL_PREFIX=/source_code/src/ros2_RobotSimulation/install/cyton_ros2_gazebo
+[0.382s] -- The C compiler identification is GNU 11.3.0
+[0.600s] -- The CXX compiler identification is GNU 11.3.0
+[0.616s] -- Detecting C compiler ABI info
+[0.733s] -- Detecting C compiler ABI info - done
+[0.741s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.743s] -- Detecting C compile features
+[0.744s] -- Detecting C compile features - done
+[0.749s] -- Detecting CXX compiler ABI info
+[0.866s] -- Detecting CXX compiler ABI info - done
+[0.874s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.875s] -- Detecting CXX compile features
+[0.875s] -- Detecting CXX compile features - done
+[0.895s] -- Found ament_cmake: 1.3.4 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.135s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[1.404s] -- Found ros2_control: 2.25.2 (/opt/ros/humble/share/ros2_control/cmake)
+[1.429s] [31mCMake Error at CMakeLists.txt:21 (find_package):
+[1.430s]   By not providing "Findros2_controllers.cmake" in CMAKE_MODULE_PATH this
+[1.430s]   project has asked CMake to find a package configuration file provided by
+[1.430s]   "ros2_controllers", but CMake did not find one.
+[1.430s] 
+[1.430s]   Could not find a package configuration file provided by "ros2_controllers"
+[1.430s]   with any of the following names:
+[1.430s] 
+[1.430s]     ros2_controllersConfig.cmake
+[1.430s]     ros2_controllers-config.cmake
+[1.431s] 
+[1.431s]   Add the installation prefix of "ros2_controllers" to CMAKE_PREFIX_PATH or
+[1.431s]   set "ros2_controllers_DIR" to a directory containing one of the above
+[1.431s]   files.  If "ros2_controllers" provides a separate development package or
+[1.431s]   SDK, be sure it has been installed.
+[1.431s] 
+[1.431s] [0m
+[1.431s] -- Configuring incomplete, errors occurred!
+[1.431s] See also "/source_code/src/ros2_RobotSimulation/build/cyton_ros2_gazebo/CMakeFiles/CMakeOutput.log".
+[1.434s] Invoked command in '/source_code/src/ros2_RobotSimulation/build/cyton_ros2_gazebo' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ws_moveit/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake /source_code/src/ros2_RobotSimulation/Cyton/cyton_ros2_gazebo -DCMAKE_INSTALL_PREFIX=/source_code/src/ros2_RobotSimulation/install/cyton_ros2_gazebo
