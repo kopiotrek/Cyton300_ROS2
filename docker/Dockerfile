@@ -73,4 +73,4 @@ WORKDIR /app
 # Copy the cyton_ros2 project
 COPY docker/cyton_ros2/src/ros2_RobotSimulation/Cyton src/Cyton
 
-RUN /bin/bash -c "source /opt/ros/humble/setup.bash; colcon build --packages-select cyton_ros2_gazebo"
+RUN /bin/bash -c "source /opt/ros/humble/setup.bash; colcon build --packages-select cyton_ros2_gazebo cyton_moveit"

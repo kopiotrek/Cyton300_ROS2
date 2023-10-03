@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: cyton_ros2_gazebo
+    relative_path: urdf/cyton.urdf.xacro
+  srdf:
+    relative_path: config/cyton.srdf
+  package_settings:
+    author_name: Piotr Koczy
+    author_email: 259367@student.pwr.edu.pl
+    generated_timestamp: 1696337971
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
