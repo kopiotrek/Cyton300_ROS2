@@ -7,7 +7,7 @@
 
     <xacro:macro name="cyton_robot">
         <xacro:cyton_transmission />
-        <xacro:cyton_ignition />
+        <!-- <xacro:cyton_ignition /> -->
 
         <material name="blue">
           <color rgba= "255 149 0 1"/>
