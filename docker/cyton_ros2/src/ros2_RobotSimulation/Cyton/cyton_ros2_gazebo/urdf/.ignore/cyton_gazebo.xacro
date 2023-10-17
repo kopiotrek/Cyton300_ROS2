@@ -196,7 +196,7 @@
       </joint> -->
 
       <!-- cyton_finger_joint2 -->
-      <!-- <joint name="gripper_joint2">
+      <!-- <joint name="mimic_gripper_joint">
         <command_interface name="position">
           <param name="min">-0.001</param>
           <param name="max">0.04</param>

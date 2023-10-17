@@ -233,7 +233,7 @@
         </link>
 
         <!-- Eighth motor located here -->
-        <joint name="${prefix}gripper_joint2" type="prismatic">
+        <joint name="${prefix}mimic_gripper_joint" type="prismatic">
             <parent link="${prefix}wrist_roll" />
             <child link="${prefix}gripper_finger2" />
             <origin xyz="0.0098 0.00485 0.077225" rpy="0 0 0" />

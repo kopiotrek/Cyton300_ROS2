@@ -21,8 +21,8 @@ moveit_simple_controller_manager:
       - wrist_roll_joint
   cyton_hand_controller:
     type: GripperCommand
+    action_ns: gripper_command
+    default: true
     joints:
       - gripper_joint
-      - gripper_joint2
-    action_ns: gripper_cmd
-    default: true
+      - mimic_gripper_joint

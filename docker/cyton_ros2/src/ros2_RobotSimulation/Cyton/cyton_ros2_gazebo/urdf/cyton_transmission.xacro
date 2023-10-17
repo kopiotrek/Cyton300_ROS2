@@ -147,15 +147,15 @@
   </transmission>
 
 <!-- TODO Motor 9 in reality is motor 8, don't know solution yet -->
-  <transmission name="tran9">
+  <!-- <transmission name="tran9">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="gripper_joint2">
+    <joint name="mimic_gripper_joint">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor9">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </actuator>
-  </transmission>
+  </transmission> -->
 
   </xacro:macro>
 

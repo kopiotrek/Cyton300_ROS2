@@ -25,6 +25,7 @@ RUN apt-get update \
     ros-$ROS_DISTRO-controller-manager \
     ros-$ROS_DISTRO-ros2-control \
     ros-$ROS_DISTRO-ros2-controllers \
+    ros-$ROS_DISTRO-gripper-controllers \
     # MoveIt
     ros-$ROS_DISTRO-moveit \
     && rm -rf /var/lib/apt/lists/*

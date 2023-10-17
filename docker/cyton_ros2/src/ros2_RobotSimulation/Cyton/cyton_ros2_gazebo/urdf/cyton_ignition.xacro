@@ -200,16 +200,7 @@
       </joint>
 
       <!-- cyton_joint7 -->
-      <joint name="gripper_joint2">
-        <!-- <param name="initial_position">0.785</param> -->
-        <command_interface name="position">
-          <param name="min">-3.15</param> <!-- ** -3.935 -->
-          <param name="max">3.15</param> <!-- ** 2.365 -->
-        </command_interface>
-        <command_interface name="velocity">
-          <param name="min">-2.6100</param>
-          <param name="max">2.6100</param>
-        </command_interface>
+      <joint name="mimic_gripper_joint">
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
@@ -231,7 +222,7 @@
       </joint> -->
 
       <!-- cyton_finger_joint2 -->
-      <!-- <joint name="gripper_joint2">
+      <!-- <joint name="mimic_gripper_joint">
         <command_interface name="position">
           <param name="min">-0.001</param>
           <param name="max">0.04</param>

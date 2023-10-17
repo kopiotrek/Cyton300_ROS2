@@ -33,4 +33,4 @@ cyton_hand_controller:
   ros__parameters:
     joints:
       - gripper_joint
-      - gripper_joint2
+      - mimic_gripper_joint
