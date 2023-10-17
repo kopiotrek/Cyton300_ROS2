@@ -25,6 +25,8 @@
         <link name="gripper_finger2"/>
     </group> -->
     <group name="cyton_hand">
+        <link name="gripper_finger1"/>
+        <link name="gripper_finger2"/>
         <joint name="gripper_joint"/>
         <joint name="mimic_gripper_joint"/>
     </group>
@@ -47,7 +49,7 @@
         <joint name="mimic_gripper_joint" value="-0.008"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <!-- PREVIOUS NAME: gripper -->
+    <!-- PREVIOUS NAME: gripperz -->
     <end_effector name="gripper_joint" parent_link="wrist_roll" group="cyton_hand"/>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="cyton_virtual_base" type="fixed" parent_frame="world" child_link="base_footprint"/>

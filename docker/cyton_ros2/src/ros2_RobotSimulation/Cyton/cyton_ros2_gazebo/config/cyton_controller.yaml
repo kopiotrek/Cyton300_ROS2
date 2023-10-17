@@ -1,85 +1,18 @@
-# # cyton_joint_trajectory_action_controller: 
-# #   type: "position_controllers/JointTrajectoryController"
-# #   joints:
-# #     - shoulder_roll_joint
-# #     - shoulder_pitch_joint
-# #     - elbow_roll_joint
-# #     - elbow_pitch_joint
-# #     - elbow_yaw_joint
-# #     - wrist_pitch_joint
-# #     - wrist_roll_joint
 
-
-# controller_manager:
-#   ros__parameters:
-#     update_rate: 100  # Hz
-
-#     joint_state_broadcaster:
-#       type: joint_state_broadcaster/JointStateBroadcaster
-
-#     joint_trajectory_controller:
-#       type: joint_trajectory_controller/JointTrajectoryController
-
-#     velocity_controller:
-#       type: velocity_controllers/JointGroupVelocityController
-
-#     joint_state_controller:
-#       type: joint_state_controller/JointStateController
-
-# velocity_controller:
-#   ros__parameters:
-#     joints:
-#       - shoulder_roll_joint
-#       - shoulder_pitch_joint
-
-# joint_trajectory_controller:
-#   ros__parameters:
-#     joints:
-#       - shoulder_roll_joint
-#       - shoulder_pitch_joint
-#       - elbow_roll_joint
-#       - elbow_pitch_joint
-#       - elbow_yaw_joint
-#       - wrist_pitch_joint
-#       - wrist_roll_joint
-
-#     command_interfaces:
-#       - position
-
-#     state_interfaces:
-#       - position
-#       - velocity
 
 # PONIŻEJ ODKOMENTOWAĆ::::
 controller_manager:
   ros__parameters:
     update_rate: 100 #Hz
 
-    # cyton_controller:
-    #   type: joint_trajectory_controller/JointTrajectoryController
-    #   joints:
-    #     - shoulder_roll_joint
-    #     - shoulder_pitch_joint
-    #     - elbow_roll_joint
-    #     - elbow_pitch_joint
-    #     - elbow_yaw_joint
-    #     - wrist_pitch_joint
-    #     - wrist_roll_joint
-    #   publish_rate: 50
-    #   write_op_modes:
-    #     - shoulder_roll_joint
-    #     - shoulder_pitch_joint
-    #     - elbow_roll_joint
-    #     - elbow_pitch_joint
-    #     - elbow_yaw_joint
-    #     - wrist_pitch_joint
-    #     - wrist_roll_joint
-
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
     joint_trajectory_controller:
-      type: "joint_trajectory_controller/JointTrajectoryController"
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    gripper_action_controller:
+      type: position_controllers/GripperActionController
 
 joint_trajectory_controller:
   ros__parameters:
@@ -91,8 +24,6 @@ joint_trajectory_controller:
         - elbow_yaw_joint
         - wrist_pitch_joint
         - wrist_roll_joint
-        - gripper_joint
-        - mimic_gripper_joint
 
     command_interfaces:
       - position
@@ -106,38 +37,9 @@ joint_trajectory_controller:
 
     allow_partial_joints_goal: false
     open_loop_control: true
-    # constraints:
-    #   stopped_velocity_tolerance: 0.01
-    #   goal_time: 0.0
-    #   joint1:
-    #     trajectory: 0.05
-    #     goal: 0.03
 
-# cyton_controller:
-#   ros__parameters:
-#     joints:
-#         - shoulder_roll_joint
-#         - shoulder_pitch_joint
-#         - elbow_roll_joint
-#         - elbow_pitch_joint
-#         - elbow_yaw_joint
-#         - wrist_pitch_joint
-#         - wrist_roll_joint
-#     command_interfaces:
-#       - position
-#     state_interfaces:
-#       - position
-#       - velocity
-#     state_publish_rate: 100.0
-#     action_monitor_rate: 20.0
-#     allow_partial_joints_goal: true
-    # constraints:
-    #   stopped_velocity_tolerance: 0.2
-    #   goal_time: 0.0
-    #   shoulder_roll_joint: { trajectory: 0.2, goal: 0.1 }
-    #   shoulder_pitch_joint: { trajectory: 0.2, goal: 0.1 }
-    #   elbow_roll_joint: { trajectory: 0.2, goal: 0.1 }
-    #   elbow_pitch_joint: { trajectory: 0.2, goal: 0.1 }
-    #   elbow_yaw_joint: { trajectory: 0.2, goal: 0.1 }
-    #   wrist_pitch_joint: { trajectory: 0.2, goal: 0.1 }
-    #   wrist_roll_joint: { trajectory: 0.2, goal: 0.1 }
+gripper_action_controller:
+  ros__parameters:
+    joint: gripper_joint
+
+      

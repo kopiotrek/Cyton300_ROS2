@@ -64,12 +64,12 @@
                 </state_interface>
                 <state_interface name="velocity"/>
             </joint>
-            <joint name="mimic_gripper_joint">
+            <!-- <joint name="mimic_gripper_joint">
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['mimic_gripper_joint']}</param>
                 </state_interface>
                 <state_interface name="velocity"/>
-            </joint>
+            </joint> -->
 
         </ros2_control>
     </xacro:macro>

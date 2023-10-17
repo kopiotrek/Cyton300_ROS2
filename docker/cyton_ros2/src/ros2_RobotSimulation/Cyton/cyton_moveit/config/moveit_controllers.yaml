@@ -25,4 +25,4 @@ moveit_simple_controller_manager:
     default: true
     joints:
       - gripper_joint
-      - mimic_gripper_joint
+      # - mimic_gripper_joint
