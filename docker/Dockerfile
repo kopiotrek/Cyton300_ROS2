@@ -59,6 +59,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
 
+
 # Copy the entrypoint and bashrc scripts so we have 
 # our container's environment set up correctly
 COPY docker/entrypoint.sh /entrypoint.sh

@@ -11,6 +11,7 @@ services:
     environment:
       - DISPLAY
       - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID
     volumes:
       - ./docker/cyton_ros2:/my_source_code
       - /tmp/.X11-unix:/tmp/.X11-unix
