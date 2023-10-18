@@ -31,5 +31,4 @@ cyton_arm_controller:
       - velocity
 cyton_hand_controller:
   ros__parameters:
-    joints:
-      - gripper_joint
+    joint: "gripper_joint"
