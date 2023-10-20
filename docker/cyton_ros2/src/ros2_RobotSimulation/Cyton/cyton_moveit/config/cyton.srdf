@@ -58,8 +58,8 @@
     <disable_collisions link1="base_footprint" link2="joint4" reason="Never"/>
     <disable_collisions link1="base_footprint" link2="joint3" reason="Never"/>
     <disable_collisions link1="base_footprint" link2="joint5" reason="Never"/>
-    <disable_collisions link1="base_footprint" link2="gripper_finger1" reason="Never"/>
-    <disable_collisions link1="base_footprint" link2="gripper_finger2" reason="Never"/>
+    <!-- <disable_collisions link1="base_footprint" link2="gripper_finger1" reason="Never"/>
+    <disable_collisions link1="base_footprint" link2="gripper_finger2" reason="Never"/> -->
     <disable_collisions link1="base_footprint" link2="joint2" reason="Never"/>
     <disable_collisions link1="base_footprint" link2="joint1" reason="Never"/>
     <disable_collisions link1="base_footprint" link2="joint7" reason="Never"/>
@@ -68,9 +68,10 @@
     <disable_collisions link1="joint4" link2="joint3" reason="Adjacent"/>
     <disable_collisions link1="joint4" link2="joint5" reason="Adjacent"/>
     <disable_collisions link1="joint3" link2="joint2" reason="Adjacent"/>
+    <disable_collisions link1="joint5" link2="joint6" reason="Adjacent"/>
     <disable_collisions link1="joint3" link2="joint1" reason="Never"/>
-    <disable_collisions link1="joint5" link2="gripper_finger1" reason="Never"/>
-    <disable_collisions link1="joint5" link2="gripper_finger2" reason="Never"/>
+    <!-- <disable_collisions link1="joint5" link2="gripper_finger1" reason="Never"/>
+    <disable_collisions link1="joint5" link2="gripper_finger2" reason="Never"/> -->
     <disable_collisions link1="joint5" link2="joint7" reason="Adjacent"/>
     <!-- <disable_collisions link1="gripper_finger1" link2="gripper_finger2" reason="Never"/>
     <disable_collisions link1="gripper_finger1" link2="joint7" reason="Never"/>
