@@ -1,12 +1,12 @@
 # Default initial positions for cyton's ros2_control fake system
 
 initial_positions:
-  elbow_pitch_joint: 0
-  elbow_roll_joint: 0
-  elbow_yaw_joint: 0
-  gripper_joint: 0
-  mimic_gripper_joint: 0
-  shoulder_pitch_joint: 0
-  shoulder_roll_joint: 0
-  wrist_pitch_joint: 0
-  wrist_roll_joint: 0
+  elbow_pitch_joint: -1.186
+  elbow_roll_joint: -1.326
+  elbow_yaw_joint: -1.256
+  # gripper_joint: 0
+  # mimic_gripper_joint: 0
+  shoulder_pitch_joint: -1.204
+  shoulder_roll_joint: 0.506
+  wrist_pitch_joint: -1.186
+  wrist_roll_joint:  0.436

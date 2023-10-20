@@ -70,7 +70,7 @@
         </link>
 
         <!-- First motor located here -->
-        <joint name="shoulder_roll_joint" type="revolute">
+        <joint name="joint1" type="revolute">
             <parent link="base_link" />
             <child link="shoulder_roll" />
             <origin xyz="0 0 0.05315" rpy="0 0 1.2" />
@@ -103,7 +103,7 @@
         </link>
 
         <!-- Second motor located here -->
-        <joint name="shoulder_pitch_joint" type="revolute">
+        <joint name="joint2" type="revolute">
             <parent link="shoulder_roll" />
             <child link="shoulder_pitch" />
             <origin xyz="0 0 0.063" rpy="1.2 0 0" />
@@ -134,9 +134,8 @@
                     iyy="0.005399428220449068" iyz="0" izz="0.005770766916274131" />
             </inertial>
         </link>
-        <!-- TUTAJ ODPIERDALA -->
         <!-- Third motor located here -->
-        <joint name="elbow_roll_joint" type="revolute">
+        <joint name="joint3" type="revolute">
             <parent link="shoulder_pitch" />
             <child link="elbow_roll" />
             <origin xyz="0 0 0.089" rpy="0 0 1.2" />
@@ -171,7 +170,7 @@
         </link>
 
         <!-- Fourth motor located here -->
-        <joint name="elbow_pitch_joint" type="revolute">
+        <joint name="joint4" type="revolute">
             <parent link="elbow_roll" />
             <child link="elbow_pitch" />
             <origin xyz="0 0 0.052" rpy="1.2 0 0" />
@@ -205,7 +204,7 @@
         </link>
 
         <!-- Fifth motor located here -->
-        <joint name="elbow_yaw_joint" type="revolute">
+        <joint name="joint5" type="revolute">
             <parent link="elbow_pitch" />
             <child link="elbow_yaw" />
             <origin xyz="0 0 0.072" rpy="0 -1.2 0" />
@@ -239,7 +238,7 @@
         </link>
 
         <!-- Sixth motor located here -->
-        <joint name="wrist_pitch_joint" type="revolute">
+        <joint name="joint6" type="revolute">
             <parent link="elbow_yaw" />
             <child link="wrist_pitch" />
             <origin xyz="0 0 0.0718" rpy="1.2 0 0" />
@@ -272,7 +271,7 @@
         </link>
 
         <!-- Seventh motor located here -->
-        <joint name="wrist_roll_joint" type="revolute">
+        <joint name="joint7" type="revolute">
             <parent link="wrist_pitch" />
             <child link="wrist_roll" />
             <origin xyz="0 0 0.051425" rpy="0 0 1.2" />
@@ -305,7 +304,7 @@
         </link>
 
         <!-- Eighth motor located here -->
-        <joint name="gripper_joint" type="prismatic">
+        <!-- <joint name="gripper_joint" type="prismatic">
             <parent link="wrist_roll" />
             <child link="gripper_finger1" />
             <origin xyz="-0.01331 0.00485 0.077225" rpy="0 0 0" />
@@ -334,10 +333,10 @@
                 <inertia  ixx="0.00011683333934843555" ixy="0" ixz="0" 
                     iyy="9.527084112726167e-05" iyz="0" izz="5.193749979697169e-05" />
             </inertial>
-        </link>
+        </link> -->
 
         <!-- Eighth motor located here -->
-        <joint name="mimic_gripper_joint" type="prismatic">
+        <!-- <joint name="mimic_gripper_joint" type="prismatic">
             <parent link="wrist_roll" />
             <child link="gripper_finger2" />
             <origin xyz="0.0098 0.00485 0.077225" rpy="0 0 0" />
@@ -367,7 +366,7 @@
                 <inertia  ixx="0.00011683333934843555" ixy="0" ixz="0" 
                     iyy="9.527084112726167e-05" iyz="0" izz="5.193749979697169e-05" />
             </inertial>
-        </link>
+        </link> -->
 
         <!-- <xacro:if value="${virtual_ee}">
             <joint name="virtual_endeffector_joint" type="fixed">

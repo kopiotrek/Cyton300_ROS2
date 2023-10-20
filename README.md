@@ -8,7 +8,7 @@ How to run:
 
 Notes:
 
-sudo chmod 777 /dev/ttyusb0
+sudo chmod 777 /dev/ttyUSB0
 
 Cyton consists of: 
     - 1 MX-64 dynamixel
