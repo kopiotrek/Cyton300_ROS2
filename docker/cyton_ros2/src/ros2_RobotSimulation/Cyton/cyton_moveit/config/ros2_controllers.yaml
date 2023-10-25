@@ -32,3 +32,8 @@ cyton_arm_controller:
 cyton_hand_controller:
   ros__parameters:
     joint: "joint8"
+    # command_interfaces:
+    #   - position
+    # state_interfaces:
+    #   - position
+    #   - velocity

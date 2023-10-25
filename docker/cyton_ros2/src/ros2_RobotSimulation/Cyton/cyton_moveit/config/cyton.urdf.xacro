@@ -9,6 +9,6 @@
     <xacro:include filename="cyton.ros2_control.xacro" />
 
 
-    <xacro:cyton_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+    <xacro:cyton_ros2_control name="DynamixelHardware" initial_positions_file="$(arg initial_positions_file)"/>
 
 </robot>

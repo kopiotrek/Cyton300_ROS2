@@ -28,6 +28,8 @@ RUN apt-get update \
     ros-$ROS_DISTRO-gripper-controllers \
     # MoveIt
     ros-$ROS_DISTRO-moveit \
+    # DynamixelHardware
+    ros-$ROS_DISTRO-dynamixel-workbench-toolbox \
     && rm -rf /var/lib/apt/lists/*
 
 RUN rosdep update
@@ -75,4 +77,7 @@ WORKDIR /app
 # Copy the cyton_ros2 project
 COPY docker/cyton_ros2/src/ros2_RobotSimulation/Cyton src/Cyton
 
-RUN /bin/bash -c "source /opt/ros/humble/setup.bash; colcon build --packages-select cyton_ros2_gazebo cyton_moveit"
+RUN /bin/bash -c "source /opt/ros/humble/setup.bash; \
+colcon build --packages-select dynamixel_hardware; \
+source install/setup.bash; \
+colcon build --packages-select cyton_ros2_gazebo cyton_moveit"
