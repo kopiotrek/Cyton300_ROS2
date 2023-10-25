@@ -70,27 +70,27 @@
         </link>
 
         <!-- First motor located here -->
-        <joint name="shoulder_roll_joint" type="revolute">
+        <joint name="joint1" type="revolute">
             <parent link="base_link" />
-            <child link="shoulder_roll" />
+            <child link="joint1" />
             <origin xyz="0 0 0.05315" rpy="0 0 1.2" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-2.618" upper="2.618" effort="7.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="shoulder_roll">
+        <link name="joint1">
             <visual>
                 <origin xyz="0 0 0" rpy="1.5708 0 3.14159" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Shoulder_Roll.dae" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint1.dae" />
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0 0 0" rpy="1.5708 0 3.14159" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Shoulder_Roll.stl" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint1.stl" />
                     <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
@@ -103,27 +103,27 @@
         </link>
 
         <!-- Second motor located here -->
-        <joint name="shoulder_pitch_joint" type="revolute">
-            <parent link="shoulder_roll" />
-            <child link="shoulder_pitch" />
+        <joint name="joint2" type="revolute">
+            <parent link="joint1" />
+            <child link="joint2" />
             <origin xyz="0 0 0.063" rpy="1.2 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="shoulder_pitch">
+        <link name="joint2">
             <visual>
                 <origin xyz="0.028 0 0" rpy="0 1.5708 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Shoulder_Pitch.dae" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint2.dae" />
                 </geometry>
                 <material name="blue"/>             
             </visual>
             <collision>
                 <origin xyz="0.028 0 0" rpy="0 1.5708 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Shoulder_Pitch.stl" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint2.stl" />
                     <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
@@ -136,27 +136,27 @@
         </link>
         <!-- TUTAJ ODPIERDALA -->
         <!-- Third motor located here -->
-        <joint name="elbow_roll_joint" type="revolute">
-            <parent link="shoulder_pitch" />
-            <child link="elbow_roll" />
+        <joint name="joint3" type="revolute">
+            <parent link="joint2" />
+            <child link="joint3" />
             <origin xyz="0 0 0.089" rpy="0 0 1.2" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="elbow_roll">
+        <link name="joint3">
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 3.92699" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Elbow_Roll.dae" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint3.dae" />
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 3.92699" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Elbow_Roll.stl" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint3.stl" />
                     <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
@@ -171,28 +171,28 @@
         </link>
 
         <!-- Fourth motor located here -->
-        <joint name="elbow_pitch_joint" type="revolute">
-            <parent link="elbow_roll" />
-            <child link="elbow_pitch" />
+        <joint name="joint4" type="revolute">
+            <parent link="joint3" />
+            <child link="joint4" />
             <origin xyz="0 0 0.052" rpy="1.2 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="elbow_pitch">
+        <link name="joint4">
             <visual>
                 <!-- Not sure if this is the correct orientation. -->
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Elbow_Pitch.dae" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint4.dae" />
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Elbow_Pitch.stl" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint4.stl" />
                     <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
@@ -205,27 +205,27 @@
         </link>
 
         <!-- Fifth motor located here -->
-        <joint name="elbow_yaw_joint" type="revolute">
-            <parent link="elbow_pitch" />
-            <child link="elbow_yaw" />
+        <joint name="joint5" type="revolute">
+            <parent link="joint4" />
+            <child link="joint5" />
             <origin xyz="0 0 0.072" rpy="0 -1.2 0" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
             <axis xyz="0 -1 0" />
         </joint>
 
-        <link name="elbow_yaw">
+        <link name="joint5">
             <visual>
                 <origin xyz="0 0 0" rpy="1.5708 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Elbow_Yaw.dae" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint5.dae" />
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0 0 0" rpy="1.5708 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Elbow_Yaw.stl" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint5.stl" />
                     <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
@@ -239,27 +239,27 @@
         </link>
 
         <!-- Sixth motor located here -->
-        <joint name="wrist_pitch_joint" type="revolute">
-            <parent link="elbow_yaw" />
-            <child link="wrist_pitch" />
+        <joint name="joint7" type="revolute">
+            <parent link="joint5" />
+            <child link="joint7" />
             <origin xyz="0 0 0.0718" rpy="1.2 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="wrist_pitch">
+        <link name="joint7">
             <visual>
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Wrist_Pitch.dae" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint7.dae" />
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Wrist_Pitch.stl" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint7.stl" />
                     <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
@@ -272,27 +272,27 @@
         </link>
 
         <!-- Seventh motor located here -->
-        <joint name="wrist_roll_joint" type="revolute">
-            <parent link="wrist_pitch" />
-            <child link="wrist_roll" />
+        <joint name="joint6" type="revolute">
+            <parent link="joint7" />
+            <child link="joint6" />
             <origin xyz="0 0 0.051425" rpy="0 0 1.2" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-2.61799" upper="2.61799" effort="7.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="wrist_roll">
+        <link name="joint6">
             <visual>
                 <origin xyz="0 0 0" rpy="0 3.14159 1.5708" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Wrist_Roll.dae" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint6.dae" />
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0 0 0" rpy="0 3.14159 1.5708" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Wrist_Roll.stl" />
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint6.stl" />
                     <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
@@ -305,27 +305,27 @@
         </link>
 
         <!-- Eighth motor located here -->
-        <joint name="gripper_joint" type="prismatic">
-            <parent link="wrist_roll" />
-            <child link="gripper_finger1" />
+        <joint name="joint8" type="prismatic">
+            <parent link="joint6" />
+            <child link="joint8" />
             <origin xyz="-0.01331 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-0.008" upper="0.008" effort="7.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="gripper_finger1">
+        <link name="joint8">
             <visual>
                 <origin xyz="0 0 -0.03" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Gripper_Finger1.dae"/>
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint8.dae"/>
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0 0 -0.03" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Gripper_Finger1.stl"/>
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint8.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -337,28 +337,28 @@
         </link>
 
         <!-- Eighth motor located here -->
-        <joint name="mimic_gripper_joint" type="prismatic">
-            <parent link="wrist_roll" />
-            <child link="gripper_finger2" />
+        <joint name="joint9" type="prismatic">
+            <parent link="joint6" />
+            <child link="joint9" />
             <origin xyz="0.0098 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
             <limit lower="-0.008" upper="0.008" effort="7.0" velocity="1.0" />
-            <mimic joint="gripper_joint" multiplier="-1"/>
+            <mimic joint="joint8" multiplier="-1"/>
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="gripper_finger2">
+        <link name="joint9">
             <visual>
                 <origin xyz="0 0 -0.03" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/Gripper_Finger2.dae"/>
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/visual/joint9.dae"/>
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
                 <origin xyz="0 0 -0.03" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/Gripper_Finger2.stl"/>
+                    <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint9.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -371,7 +371,7 @@
 
         <!-- <xacro:if value="${virtual_ee}">
             <joint name="virtual_endeffector_joint" type="fixed">
-                <parent link="wrist_roll" />
+                <parent link="joint6" />
                 <child link="virtual_endeffector" />
                 <origin xyz="-0.002316 0.0079 0.079425" rpy="0 0 0" />
             </joint>

@@ -98,7 +98,7 @@ int main(int argc, char** argv)
   /* Find the default pose for the end effector */
   kinematic_state->setToDefaultValues();
 
-  const Eigen::Isometry3d end_effector_default_pose = kinematic_state->getGlobalLinkTransform("r_wrist_roll_link");
+  const Eigen::Isometry3d end_effector_default_pose = kinematic_state->getGlobalLinkTransform("r_joint6_link");
 
   const double PI = boost::math::constants::pi<double>();
   const double RADIUS = 0.1;

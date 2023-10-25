@@ -68,7 +68,7 @@
 
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="shoulder_roll_joint">
+    <joint name="joint1">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor1">
@@ -78,7 +78,7 @@
 
   <transmission name="tran2">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="shoulder_pitch_joint">
+    <joint name="joint2">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor2">
@@ -88,7 +88,7 @@
 
   <transmission name="tran3">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="elbow_roll_joint">
+    <joint name="joint3">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor3">
@@ -98,7 +98,7 @@
 
   <transmission name="tran4">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="elbow_pitch_joint">
+    <joint name="joint4">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor4">
@@ -108,7 +108,7 @@
 
   <transmission name="tran5">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="elbow_yaw_joint">
+    <joint name="joint5">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor5">
@@ -118,7 +118,7 @@
 
   <transmission name="tran6">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="wrist_pitch_joint">
+    <joint name="joint7">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor6">
@@ -128,7 +128,7 @@
 
   <transmission name="tran7">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="wrist_roll_joint">
+    <joint name="joint6">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor7">
@@ -138,7 +138,7 @@
 
   <transmission name="tran8">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="gripper_joint">
+    <joint name="joint8">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor8">
@@ -149,7 +149,7 @@
 <!-- TODO Motor 9 in reality is motor 8, don't know solution yet -->
   <!-- <transmission name="tran9">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="mimic_gripper_joint">
+    <joint name="joint9">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor9">

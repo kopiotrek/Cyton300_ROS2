@@ -119,8 +119,8 @@
     <xacro:property name="shoulder_x" value="0" scope="parent"/>
     <xacro:property name="shoulder_y" value="0" scope="parent"/>
     <xacro:property name="shoulder_z" value="0.1273" scope="parent"/>
-    <xacro:property name="shoulder_roll" value="0" scope="parent"/>
-    <xacro:property name="shoulder_pitch" value="0" scope="parent"/>
+    <xacro:property name="joint1" value="0" scope="parent"/>
+    <xacro:property name="joint2" value="0" scope="parent"/>
     <xacro:property name="shoulder_yaw" value="0" scope="parent"/>
 
     <xacro:property name="upper_arm_x" value="0" scope="parent"/>

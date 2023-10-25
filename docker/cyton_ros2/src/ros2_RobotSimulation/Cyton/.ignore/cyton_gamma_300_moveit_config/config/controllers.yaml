@@ -4,11 +4,11 @@ controller_list:
     type: FollowJointTrajectory
     joints:
       - base_joint
-      - shoulder_roll_joint
-      - shoulder_pitch_joint
-      - elbow_roll_joint
-      - elbow_pitch_joint
-      - elbow_yaw_joint
-      - wrist_pitch_joint
-      - wrist_roll_joint
-      - gripper_joint
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint7
+      - joint6
+      - joint8

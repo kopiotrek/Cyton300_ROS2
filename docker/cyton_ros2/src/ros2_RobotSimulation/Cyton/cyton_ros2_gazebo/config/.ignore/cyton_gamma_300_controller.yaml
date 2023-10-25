@@ -1,13 +1,13 @@
-dynamixels: ['shoulder_roll_joint', 'shoulder_pitch_joint', 'elbow_roll_joint', 'elbow_pitch_joint', 'elbow_yaw_joint', 'wrist_pitch_joint', 'wrist_roll_joint']
+dynamixels: ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint7', 'joint6']
 
-# 'gripper_joint'
+# 'joint8'
 
-shoulder_roll_position_controller:
+joint1_position_controller:
   controller:
     package: dynamixel_controllers
     module: joint_position_controller
     type: JointPositionController
-  joint_name: shoulder_roll_joint
+  joint_name: joint1
   joint_speed: 5.0
   motor:
     id: 0
@@ -15,12 +15,12 @@ shoulder_roll_position_controller:
     min: 350
     max: 3790
 
-shoulder_pitch_position_controller:
+joint2_position_controller:
   controller:
     package: dynamixel_controllers
     module: joint_position_controller
     type: JointPositionController
-  joint_name: shoulder_pitch_joint
+  joint_name: joint2
   joint_speed: 5.0
   motor:
     id: 1
@@ -28,12 +28,12 @@ shoulder_pitch_position_controller:
     min: 750
     max: 3340
 
-elbow_roll_position_controller:
+joint3_position_controller:
   controller:
     package: dynamixel_controllers
     module: joint_position_controller
     type: JointPositionController
-  joint_name: elbow_roll_joint
+  joint_name: joint3
   joint_speed: 5.0
   motor:
     id: 2
@@ -41,12 +41,12 @@ elbow_roll_position_controller:
     min: 350
     max: 3770
 
-elbow_pitch_position_controller:
+joint4_position_controller:
   controller:
     package: dynamixel_controllers
     module: joint_position_controller
     type: JointPositionController
-  joint_name: elbow_pitch_joint
+  joint_name: joint4
   joint_speed: 5.0
   motor:
     id: 3
@@ -54,12 +54,12 @@ elbow_pitch_position_controller:
     min: 770
     max: 3320
 
-elbow_yaw_position_controller:
+joint5_position_controller:
   controller:
     package: dynamixel_controllers
     module: joint_position_controller
     type: JointPositionController
-  joint_name: elbow_yaw_joint
+  joint_name: joint5
   joint_speed: 5.0
   motor:
     id: 4
@@ -67,12 +67,12 @@ elbow_yaw_position_controller:
     min: 750
     max: 3320
 
-wrist_pitch_position_controller:
+joint7_position_controller:
   controller:
     package: dynamixel_controllers
     module: joint_position_controller
     type: JointPositionController
-  joint_name: wrist_pitch_joint
+  joint_name: joint7
   joint_speed: 5.0
   motor:
     id: 5
@@ -80,12 +80,12 @@ wrist_pitch_position_controller:
     min: 750
     max: 3320
 
-wrist_roll_position_controller:
+joint6_position_controller:
   controller:
     package: dynamixel_controllers
     module: joint_position_controller
     type: JointPositionController
-  joint_name: wrist_roll_joint
+  joint_name: joint6
   joint_speed: 5.0
   motor:
     id: 6

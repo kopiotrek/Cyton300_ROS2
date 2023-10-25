@@ -80,5 +80,5 @@ manipulator_planning_group:
 #    - TRRTkConfigDefault
 #    - PRMkConfigDefault
 #    - PRMstarkConfigDefault
-#  projection_evaluator: joints(gripper_joint,mimic_gripper_joint)
+#  projection_evaluator: joints(joint8,joint9)
   longest_valid_segment_fraction: 0.05

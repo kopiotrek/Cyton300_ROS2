@@ -73,27 +73,27 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          elbow_pitch:
+          joint4:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          elbow_roll:
+          joint3:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          elbow_yaw:
+          joint5:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          shoulder_pitch:
+          joint2:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          shoulder_roll:
+          joint1:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -103,12 +103,12 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          wrist_pitch:
+          joint7:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          wrist_roll:
+          joint6:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -166,27 +166,27 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          elbow_pitch:
+          joint4:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          elbow_roll:
+          joint3:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          elbow_yaw:
+          joint5:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          shoulder_pitch:
+          joint2:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          shoulder_roll:
+          joint1:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -196,12 +196,12 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          wrist_pitch:
+          joint7:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          wrist_roll:
+          joint6:
             Alpha: 1
             Show Axes: false
             Show Trail: false

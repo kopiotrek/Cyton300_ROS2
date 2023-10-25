@@ -17,13 +17,13 @@ controller_manager:
 cyton_arm_controller:
   ros__parameters:
     joints:
-      - shoulder_roll_joint
-      - shoulder_pitch_joint
-      - elbow_roll_joint
-      - elbow_pitch_joint
-      - elbow_yaw_joint
-      - wrist_pitch_joint
-      - wrist_roll_joint
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint7
+      - joint6
     command_interfaces:
       - position
     state_interfaces:
@@ -31,4 +31,4 @@ cyton_arm_controller:
       - velocity
 cyton_hand_controller:
   ros__parameters:
-    joint: "gripper_joint"
+    joint: "joint8"

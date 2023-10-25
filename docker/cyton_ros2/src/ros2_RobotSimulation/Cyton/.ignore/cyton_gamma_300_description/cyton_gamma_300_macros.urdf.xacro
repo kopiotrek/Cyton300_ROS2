@@ -40,19 +40,19 @@
         </link>
 
         <!-- First motor located here -->
-        <joint name="${prefix}shoulder_roll_joint" type="revolute">
+        <joint name="${prefix}joint1" type="revolute">
             <parent link="${prefix}base_link" />
-            <child link="${prefix}shoulder_roll" />
+            <child link="${prefix}joint1" />
             <origin xyz="0 0 0.05315" rpy="0 0 1.2" />
             <limit lower="-2.618" upper="2.618" effort="100.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="${prefix}shoulder_roll">
+        <link name="${prefix}joint1">
             <visual>
                 <origin xyz="0 0 0" rpy="1.5708 0 3.14159"/>
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Shoulder_Roll.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint1.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -64,19 +64,19 @@
         </link>
 
         <!-- Second motor located here -->
-        <joint name="${prefix}shoulder_pitch_joint" type="revolute">
-            <parent link="${prefix}shoulder_roll" />
-            <child link="${prefix}shoulder_pitch" />
+        <joint name="${prefix}joint2" type="revolute">
+            <parent link="${prefix}joint1" />
+            <child link="${prefix}joint2" />
             <origin xyz="0 0 0.063" rpy="1.2 0 0" />
             <limit lower="-1.8326" upper="1.8326" effort="100.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="${prefix}shoulder_pitch">
+        <link name="${prefix}joint2">
             <visual>
                 <origin xyz="0.028 0 0" rpy="0 1.5708 0" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Shoulder_Pitch.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint2.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -88,19 +88,19 @@
         </link>
 
         <!-- Third motor located here -->
-        <joint name="${prefix}elbow_roll_joint" type="revolute">
-            <parent link="${prefix}shoulder_pitch" />
-            <child link="${prefix}elbow_roll" />
+        <joint name="${prefix}joint3" type="revolute">
+            <parent link="${prefix}joint2" />
+            <child link="${prefix}joint3" />
             <origin xyz="0 0 0.089" rpy="0 0 1.2" />
             <limit lower="-1.8326" upper="1.8326" effort="100.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="${prefix}elbow_roll">
+        <link name="${prefix}joint3">
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 3.92699" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Roll.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint3.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -112,20 +112,20 @@
         </link>
 
         <!-- Fourth motor located here -->
-        <joint name="${prefix}elbow_pitch_joint" type="revolute">
-            <parent link="${prefix}elbow_roll" />
-            <child link="${prefix}elbow_pitch" />
+        <joint name="${prefix}joint4" type="revolute">
+            <parent link="${prefix}joint3" />
+            <child link="${prefix}joint4" />
             <origin xyz="0 0 0.052" rpy="1.2 0 0" />
             <limit lower="-1.8326" upper="1.8326" effort="100.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="${prefix}elbow_pitch">
+        <link name="${prefix}joint4">
             <visual>
                 <!-- Not sure if this is the correct orientation. -->
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Pitch.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint4.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -137,19 +137,19 @@
         </link>
 
         <!-- Fifth motor located here -->
-        <joint name="${prefix}elbow_yaw_joint" type="revolute">
-            <parent link="${prefix}elbow_pitch" />
-            <child link="${prefix}elbow_yaw" />
+        <joint name="${prefix}joint5" type="revolute">
+            <parent link="${prefix}joint4" />
+            <child link="${prefix}joint5" />
             <origin xyz="0 0 0.072" rpy="0 -1.2 0" />
             <limit lower="-1.8326" upper="1.8326" effort="100.0" velocity="1.0" />
             <axis xyz="0 -1 0" />
         </joint>
 
-        <link name="${prefix}elbow_yaw">
+        <link name="${prefix}joint5">
             <visual>
                 <origin xyz="0 0 0" rpy="1.5708 0 0" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Yaw.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint5.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -161,19 +161,19 @@
         </link>
 
         <!-- Sixth motor located here -->
-        <joint name="${prefix}wrist_pitch_joint" type="revolute">
-            <parent link="${prefix}elbow_yaw" />
-            <child link="${prefix}wrist_pitch" />
+        <joint name="${prefix}joint7" type="revolute">
+            <parent link="${prefix}joint5" />
+            <child link="${prefix}joint7" />
             <origin xyz="0 0 0.0718" rpy="1.2 0 0" />
             <limit lower="-1.8326" upper="1.8326" effort="100.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="${prefix}wrist_pitch">
+        <link name="${prefix}joint7">
             <visual>
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Wrist_Pitch.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint7.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -185,19 +185,19 @@
         </link>
 
         <!-- Seventh motor located here -->
-        <joint name="${prefix}wrist_roll_joint" type="revolute">
-            <parent link="${prefix}wrist_pitch" />
-            <child link="${prefix}wrist_roll" />
+        <joint name="${prefix}joint6" type="revolute">
+            <parent link="${prefix}joint7" />
+            <child link="${prefix}joint6" />
             <origin xyz="0 0 0.051425" rpy="0 0 1.2" />
             <limit lower="-2.61799" upper="2.61799" effort="100.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="${prefix}wrist_roll">
+        <link name="${prefix}joint6">
             <visual>
                 <origin xyz="0 0 0" rpy="0 3.14159 1.5708" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Wrist_Roll.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint6.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -209,19 +209,19 @@
         </link>
 
         <!-- Eigth motor located here -->
-        <joint name="${prefix}gripper_joint" type="prismatic">
-            <parent link="${prefix}wrist_roll" />
-            <child link="${prefix}gripper_finger1" />
+        <joint name="${prefix}joint8" type="prismatic">
+            <parent link="${prefix}joint6" />
+            <child link="${prefix}joint8" />
             <origin xyz="-0.01331 0.00485 0.077225" rpy="0 0 0" />
             <limit lower="-0.008" upper="0.008" effort="100.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="${prefix}gripper_finger1">
+        <link name="${prefix}joint8">
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Gripper_Finger1.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint8.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -233,20 +233,20 @@
         </link>
 
         <!-- Eighth motor located here -->
-        <joint name="${prefix}mimic_gripper_joint" type="prismatic">
-            <parent link="${prefix}wrist_roll" />
-            <child link="${prefix}gripper_finger2" />
+        <joint name="${prefix}joint9" type="prismatic">
+            <parent link="${prefix}joint6" />
+            <child link="${prefix}joint9" />
             <origin xyz="0.0098 0.00485 0.077225" rpy="0 0 0" />
             <limit lower="-0.008" upper="0.008" effort="100.0" velocity="1.0" />
-            <mimic joint="${prefix}gripper_joint" multiplier="-1"/>
+            <mimic joint="${prefix}joint8" multiplier="-1"/>
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="${prefix}gripper_finger2">
+        <link name="${prefix}joint9">
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="package://cyton_gamma_300_description/meshes/Gripper_Finger2.dae"/>
+                    <mesh filename="package://cyton_gamma_300_description/meshes/joint9.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -259,7 +259,7 @@
 
         <xacro:if value="${virtual_ee}"> <!-- virtual end-effector -->
             <joint name="${prefix}virtual_endeffector_joint" type="fixed">
-                <parent link="${prefix}wrist_roll" />
+                <parent link="${prefix}joint6" />
                 <child link="${prefix}virtual_endeffector" />
                 <origin xyz="-0.002316 0.0079 0.079425" rpy="0 0 0" />
             </joint>

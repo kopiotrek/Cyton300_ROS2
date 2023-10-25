@@ -57,9 +57,9 @@ def functional(axis, angle):
            message_rosey.header = header_rosey
            
            #  adding in joints
-           joint_names = ['shoulder_roll_joint', \
-  'shoulder_pitch_joint', 'shoulder_yaw_joint', 'elbow_pitch_joint', \
-  'elbow_yaw_joint', 'wrist_pitch_joint', 'wrist_roll_joint']
+           joint_names = ['joint1', \
+  'joint2', 'shoulder_yaw_joint', 'joint4', \
+  'joint5', 'joint7', 'joint6']
            message_rosey.joint_names = joint_names
            
            #  appending up to 100 points
