@@ -307,11 +307,20 @@
         <joint name="joint8" type="prismatic">
             <parent link="joint7" />
             <child link="joint8" />
-            <origin xyz="-0.01331 0.00485 0.077225" rpy="0 0 0" />
+            <origin xyz="-0.02131 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.008" upper="0.008" effort="7.0" velocity="1.0" />
+            <limit lower="-0.001" upper="0.017" effort="7.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
+
+        <!-- <joint name="joint8" type="prismatic">
+            <parent link="joint7" />
+            <child link="joint8" />
+            <origin xyz="-0.05331 0.00485 0.077225" rpy="0 0 0" />
+            <dynamics damping="0.5" friction="0.5"/>
+            <limit lower="-0.001" upper="0.017" effort="7.0" velocity="1.0" />
+            <axis xyz="1 0 0" />
+        </joint> -->
 
         <link name="joint8">
             <visual>
@@ -339,12 +348,22 @@
         <joint name="joint9" type="prismatic">
             <parent link="joint7" />
             <child link="joint9" />
-            <origin xyz="0.0098 0.00485 0.077225" rpy="0 0 0" />
+            <origin xyz="0.0178 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.008" upper="0.008" effort="7.0" velocity="1.0" />
+            <limit lower="-0.017" upper="0.001" effort="7.0" velocity="1.0" />
             <mimic joint="joint8" multiplier="-1"/>
             <axis xyz="1 0 0" />
         </joint>
+<!-- 
+        <joint name="joint9" type="prismatic">
+            <parent link="joint7" />
+            <child link="joint9" />
+            <origin xyz="0.0498 0.00485 0.077225" rpy="0 0 0" />
+            <dynamics damping="0.5" friction="0.5"/>
+            <limit lower="-0.017" upper="0.001" effort="7.0" velocity="1.0" />
+            <mimic joint="joint8" multiplier="-1"/>
+            <axis xyz="1 0 0" />
+        </joint> -->
 
         <link name="joint9">
             <visual>

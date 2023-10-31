@@ -36,13 +36,18 @@
         <joint name="joint7" value="0"/>
         <joint name="joint6" value="0.5"/>
     </group_state>
+    <!-- Physical values are: [rad] close: 0.2618, open: 2.1468 -->
+    <!-- Therefore  -->
+        <!-- <joint name="joint8">
+                <param name="id">8</param>
+                <param name="position_multiplier">160</param> -->
     <group_state name="open" group="cyton_hand">
-        <joint name="joint8" value="-0.008"/>
-        <joint name="joint9" value="0.008"/>
+        <joint name="joint8" value="0.002"/>
+        <joint name="joint9" value="0.002"/>
     </group_state>
     <group_state name="close" group="cyton_hand">
-        <joint name="joint8" value="0.008"/>
-        <joint name="joint9" value="-0.008"/>
+        <joint name="joint8" value="0.016"/>
+        <joint name="joint9" value="-0.016"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <!-- PREVIOUS NAME: gripperz -->

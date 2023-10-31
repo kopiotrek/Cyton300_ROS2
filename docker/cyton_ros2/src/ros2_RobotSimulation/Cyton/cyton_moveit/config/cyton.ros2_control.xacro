@@ -70,7 +70,7 @@
             </joint>
             <joint name="joint8">
                 <param name="id">8</param>
-                <param name="position_multiplier">163.625</param>
+                <param name="position_multiplier">-134.175</param>
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['joint8']}</param>
