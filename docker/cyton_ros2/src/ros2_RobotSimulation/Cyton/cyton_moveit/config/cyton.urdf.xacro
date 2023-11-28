@@ -6,9 +6,9 @@
     <xacro:include filename="$(find cyton_ros2_gazebo)/urdf/cyton.urdf.xacro" />
 
     <!-- Import control_xacro -->
-    <xacro:include filename="cyton.ros2_control.xacro" />
+    <!-- <xacro:include filename="cyton.ros2_control.xacro" /> -->
 
 
-    <xacro:cyton_ros2_control name="DynamixelHardware" initial_positions_file="$(arg initial_positions_file)"/>
+    <!-- <xacro:cyton_ros2_control name="DynamixelHardware" initial_positions_file="$(arg initial_positions_file)"/> -->
 
 </robot>

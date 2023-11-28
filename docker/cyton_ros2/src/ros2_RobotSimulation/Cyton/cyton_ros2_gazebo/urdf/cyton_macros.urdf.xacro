@@ -3,11 +3,11 @@
 
 
     <xacro:include filename="$(find cyton_ros2_gazebo)/urdf/cyton_ignition.xacro" />
-    <xacro:include filename="$(find cyton_ros2_gazebo)/urdf/cyton_transmission.xacro" />
+    <!-- <xacro:include filename="$(find cyton_ros2_gazebo)/urdf/cyton_transmission.xacro" /> -->
 
     <xacro:macro name="cyton_robot">
-        <xacro:cyton_transmission />
-        <!-- <xacro:cyton_ignition /> -->
+        <!-- <xacro:cyton_transmission /> -->
+        <xacro:cyton_ignition />
 
         <material name="blue">
           <color rgba= "255 149 0 1"/>
@@ -72,14 +72,14 @@
         <!-- First motor located here -->
         <joint name="joint1" type="revolute">
             <parent link="base_link" />
-            <child link="joint1" />
+            <child link="link1" />
             <origin xyz="0 0 0.05315" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-2.618" upper="2.618" effort="7.0" velocity="1.0" />
+            <limit lower="-2.618" upper="2.618" effort="1.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="joint1">
+        <link name="link1">
             <visual>
                 <origin xyz="0 0 0" rpy="1.5708 0 3.14159" />
                 <geometry>
@@ -91,7 +91,6 @@
                 <origin xyz="0 0 0" rpy="1.5708 0 3.14159" />
                 <geometry>
                     <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint1.stl" />
-                    <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
             <inertial>
@@ -104,15 +103,15 @@
 
         <!-- Second motor located here -->
         <joint name="joint2" type="revolute">
-            <parent link="joint1" />
-            <child link="joint2" />
+            <parent link="link1" />
+            <child link="link2" />
             <origin xyz="0 0 0.063" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
+            <limit lower="-1.8326" upper="1.8326" effort="1.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="joint2">
+        <link name="link2">
             <visual>
                 <origin xyz="0.028 0 0" rpy="0 1.5708 0" />
                 <geometry>
@@ -124,7 +123,6 @@
                 <origin xyz="0.028 0 0" rpy="0 1.5708 0" />
                 <geometry>
                     <mesh filename="file://$(find cyton_ros2_gazebo)/meshes/collision/joint2.stl" />
-                    <!-- <sphere radius="0.001" /> -->
                 </geometry>
             </collision>
             <inertial>
@@ -134,17 +132,19 @@
                     iyy="0.005399428220449068" iyz="0" izz="0.005770766916274131" />
             </inertial>
         </link>
+
+        
         <!-- Third motor located here -->
         <joint name="joint3" type="revolute">
-            <parent link="joint2" />
-            <child link="joint3" />
+            <parent link="link2" />
+            <child link="link3" />
             <origin xyz="0 0 0.089" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
+            <limit lower="-1.8326" upper="1.8326" effort="1.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
-
-        <link name="joint3">
++
+        <link name="link3">
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 3.92699" />
                 <geometry>
@@ -171,15 +171,15 @@
 
         <!-- Fourth motor located here -->
         <joint name="joint4" type="revolute">
-            <parent link="joint3" />
-            <child link="joint4" />
+            <parent link="link3" />
+            <child link="link4" />
             <origin xyz="0 0 0.052" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
+            <limit lower="-1.8326" upper="1.8326" effort="1.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="joint4">
+        <link name="link4">
             <visual>
                 <!-- Not sure if this is the correct orientation. -->
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
@@ -205,15 +205,15 @@
 
         <!-- Fifth motor located here -->
         <joint name="joint5" type="revolute">
-            <parent link="joint4" />
-            <child link="joint5" />
+            <parent link="link4" />
+            <child link="link5" />
             <origin xyz="0 0 0.072" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
+            <limit lower="-1.8326" upper="1.8326" effort="1.0" velocity="1.0" />
             <axis xyz="0 -1 0" />
         </joint>
 
-        <link name="joint5">
+        <link name="link5">
             <visual>
                 <origin xyz="0 0 0" rpy="1.5708 0 0" />
                 <geometry>
@@ -239,15 +239,15 @@
 
         <!-- Sixth motor located here -->
         <joint name="joint6" type="revolute">
-            <parent link="joint5" />
-            <child link="joint6" />
+            <parent link="link5" />
+            <child link="link6" />
             <origin xyz="0 0 0.0718" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-1.8326" upper="1.8326" effort="7.0" velocity="1.0" />
+            <limit lower="-1.8326" upper="1.8326" effort="1.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
-        <link name="joint6">
+        <link name="link6">
             <visual>
                 <origin xyz="0.027 0 0" rpy="1.5708 0 1.5708" />
                 <geometry>
@@ -272,15 +272,15 @@
 
         <!-- Seventh motor located here -->
         <joint name="joint7" type="revolute">
-            <parent link="joint6" />
-            <child link="joint7" />
-            <origin xyz="0 0 0.051425" rpy="0 0 0" />
+            <parent link="link6" />
+            <child link="link7" />
+            <origin xyz="0 0 0.051425" rpy="0 0 1.5708" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-2.61799" upper="2.61799" effort="7.0" velocity="1.0" />
+            <limit lower="-2.61799" upper="2.61799" effort="1.0" velocity="1.0" />
             <axis xyz="0 0 1" />
         </joint>
 
-        <link name="joint7">
+        <link name="link7">
             <visual>
                 <origin xyz="0 0 0" rpy="0 3.14159 1.5708" />
                 <geometry>
@@ -305,11 +305,11 @@
 
         <!-- Eighth motor located here -->
         <joint name="joint8" type="prismatic">
-            <parent link="joint7" />
-            <child link="joint8" />
+            <parent link="link7" />
+            <child link="link8" />
             <origin xyz="-0.02131 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.001" upper="0.017" effort="7.0" velocity="1.0" />
+            <limit lower="-0.001" upper="0.017" effort="1.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
@@ -318,11 +318,11 @@
             <child link="joint8" />
             <origin xyz="-0.05331 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.001" upper="0.017" effort="7.0" velocity="1.0" />
+            <limit lower="-0.001" upper="0.017" effort="1.0" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint> -->
 
-        <link name="joint8">
+        <link name="link8">
             <visual>
                 <origin xyz="0 0 -0.03" rpy="0 0 0" />
                 <geometry>
@@ -346,11 +346,11 @@
 
         <!-- Eighth motor located here -->
         <joint name="joint9" type="prismatic">
-            <parent link="joint7" />
-            <child link="joint9" />
+            <parent link="link7" />
+            <child link="link9" />
             <origin xyz="0.0178 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.017" upper="0.001" effort="7.0" velocity="1.0" />
+            <limit lower="-0.017" upper="0.001" effort="1.0" velocity="1.0" />
             <mimic joint="joint8" multiplier="-1"/>
             <axis xyz="1 0 0" />
         </joint>
@@ -360,12 +360,12 @@
             <child link="joint9" />
             <origin xyz="0.0498 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.017" upper="0.001" effort="7.0" velocity="1.0" />
+            <limit lower="-0.017" upper="0.001" effort="1.0" velocity="1.0" />
             <mimic joint="joint8" multiplier="-1"/>
             <axis xyz="1 0 0" />
         </joint> -->
 
-        <link name="joint9">
+        <link name="link9">
             <visual>
                 <origin xyz="0 0 -0.03" rpy="0 0 0" />
                 <geometry>

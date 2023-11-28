@@ -8,10 +8,10 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 
 moveit_simple_controller_manager:
   controller_names:
-    - cyton_arm_controller
-    - cyton_hand_controller
+    - joint_trajectory_controller
+    - gripper_action_controller
 
-  cyton_arm_controller:
+  joint_trajectory_controller:
     type: FollowJointTrajectory
     action_ns: follow_joint_trajectory
     default: true
@@ -23,10 +23,9 @@ moveit_simple_controller_manager:
       - joint5
       - joint7
       - joint6
-  cyton_hand_controller:
+  gripper_action_controller:
     type: GripperCommand
     action_ns: gripper_cmd
     default: true
     joints:
       - joint8
-      # - joint9

@@ -13,10 +13,10 @@ services:
       - QT_X11_NO_MITSHM=1
       - ROS_DOMAIN_ID
     volumes:
-      - ./docker/cyton_ros2:/my_source_code
+      - ./docker/cyton_ros2:/src
       - /tmp/.X11-unix:/tmp/.X11-unix
     devices:
       - /dev/dri:/dev/dri
-      - /dev/ttyUSB0:/dev/ttyUSB0
+      # - /dev/ttyUSB0:/dev/ttyUSB0
     stdin_open: true 
     tty: true
