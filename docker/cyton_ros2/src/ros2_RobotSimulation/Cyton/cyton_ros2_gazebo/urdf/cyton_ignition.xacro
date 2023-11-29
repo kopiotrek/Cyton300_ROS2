@@ -63,8 +63,13 @@
             <robot_param>robot_description</robot_param>
             <robot_param_node>robot_state_publisher</robot_param_node> -->
     </plugin>
+    <plugin name="${name_prefix}mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>joint8</joint>
+      <mimicJoint>joint9</mimicJoint>
+        <multiplier>-1</multiplier>
+      </plugin>
     </gazebo>
-    
+
     
   <ros2_control name="IgnitionSystem" type="system">
     <hardware>

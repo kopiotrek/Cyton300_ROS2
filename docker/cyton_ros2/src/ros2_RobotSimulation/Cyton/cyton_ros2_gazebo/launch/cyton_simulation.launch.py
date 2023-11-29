@@ -61,10 +61,11 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "robot_controller",
             default_value="joint_trajectory_controller",
-            choices=["forward_position_controller", "joint_trajectory_controller"],
+            choices=["joint_trajectory_controller"],
             description="Robot controller to start.",
         )
     )
+
 
     # Initialize Arguments
     runtime_config_package = LaunchConfiguration("runtime_config_package")
@@ -148,6 +149,12 @@ def generate_launch_description():
         arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
     )
 
+    gripper_action_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["gripper_action_controller", "--controller-manager", "/controller_manager"],
+    )
+
     robot_controllers = [robot_controller]
     robot_controller_spawners = []
     for controller in robot_controllers:
@@ -164,6 +171,14 @@ def generate_launch_description():
         event_handler=OnProcessExit(
             target_action=gazebo_spawn_robot,
             on_exit=[joint_state_broadcaster_spawner],
+        )
+    )
+
+    # Delay loading and activation of `joint_state_broadcaster` after start of ros2_control_node
+    delay_gripper_action_controller_spawner_after_gazebo_spawn_robot = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=gazebo_spawn_robot,
+            on_exit=[gripper_action_controller_spawner],
         )
     )
 
@@ -200,6 +215,7 @@ def generate_launch_description():
             robot_state_pub_node,
             # delay_rviz_after_joint_state_broadcaster_spawner,
             delay_joint_state_broadcaster_spawner_after_gazebo_spawn_robot,
+            delay_gripper_action_controller_spawner_after_gazebo_spawn_robot,
         ]
         + delay_robot_controller_spawners_after_joint_state_broadcaster_spawner
     )
