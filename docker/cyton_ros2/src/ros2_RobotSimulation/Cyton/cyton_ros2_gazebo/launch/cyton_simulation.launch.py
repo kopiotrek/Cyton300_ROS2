@@ -199,7 +199,7 @@ def generate_launch_description():
             gazebo_spawn_robot,
             robot_state_pub_node,
             # delay_rviz_after_joint_state_broadcaster_spawner,
-            # delay_joint_state_broadcaster_spawner_after_gazebo_spawn_robot,
+            delay_joint_state_broadcaster_spawner_after_gazebo_spawn_robot,
         ]
-        # + delay_robot_controller_spawners_after_joint_state_broadcaster_spawner
+        + delay_robot_controller_spawners_after_joint_state_broadcaster_spawner
     )

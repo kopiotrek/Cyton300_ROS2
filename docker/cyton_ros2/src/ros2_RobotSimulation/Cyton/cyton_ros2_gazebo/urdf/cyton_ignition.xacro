@@ -68,7 +68,7 @@
     
   <ros2_control name="IgnitionSystem" type="system">
     <hardware>
-      <plugin name="ign_ros2_control/IgnitionSystem" filename="libign_hardware_plugins.so"></plugin>
+      <plugin>ign_ros2_control/IgnitionSystem</plugin>
     </hardware>
 
       <!-- cyton_joint1 -->

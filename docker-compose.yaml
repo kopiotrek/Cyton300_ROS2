@@ -20,3 +20,4 @@ services:
       # - /dev/ttyUSB0:/dev/ttyUSB0
     stdin_open: true 
     tty: true
+    command: ros2 launch cyton_ros2_gazebo cyton_simulation.launch.py

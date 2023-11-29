@@ -2,6 +2,10 @@ FROM osrf/ros:humble-desktop-full
 
 ARG ROS_DISTRO=humble
 
+# Set up entrypoint and default command
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+CMD ["bash"]
+
 # Installing useful packages
 RUN apt-get update \
     && apt-get install -y \
@@ -69,9 +73,7 @@ COPY docker/entrypoint.sh /entrypoint.sh
 COPY docker/bashrc /home/${USERNAME}/.bashrc
 
 
-# Set up entrypoint and default command
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
-CMD ["bash"]
+
 
 
 WORKDIR /app
