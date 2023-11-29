@@ -75,7 +75,7 @@ def generate_launch_description():
     # DECLARE Ignition LAUNCH file:
     ignition = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory('ros_ign_gazebo'), 'launch'), '/ign_gazebo.launch.py']),
+                    get_package_share_directory('ros_gz_sim'), 'launch'), '/ign_gazebo.launch.py']), #was ros_ign_gazebo
                 launch_arguments={'world': world_file}.items(),
              )
 
@@ -102,7 +102,7 @@ def generate_launch_description():
     )
 
     # # SPAWN ROBOT TO GAZEBO:
-    spawn_entity = Node(package='ros_ign_gazebo', executable='create',
+    spawn_entity = Node(package='ros_gz_sim', executable='create',
                         # arguments=['-topic', 'robot_description',
                         #            '-entity', 'cyton'],
                         name="spawn_cyton",

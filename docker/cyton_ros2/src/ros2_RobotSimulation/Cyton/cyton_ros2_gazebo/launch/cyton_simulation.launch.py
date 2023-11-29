@@ -135,7 +135,7 @@ def generate_launch_description():
 
     # Spawn robot
     gazebo_spawn_robot = Node(
-        package="ros_ign_gazebo",
+        package="ros_gz_sim",#was ros_ign_gazebo
         executable="create",
         name="spawn_cyton",
         arguments=["-name", "cyton", "-topic", "robot_description"],
@@ -198,8 +198,8 @@ def generate_launch_description():
             gazebo,
             gazebo_spawn_robot,
             robot_state_pub_node,
-            delay_rviz_after_joint_state_broadcaster_spawner,
-            delay_joint_state_broadcaster_spawner_after_gazebo_spawn_robot,
+            # delay_rviz_after_joint_state_broadcaster_spawner,
+            # delay_joint_state_broadcaster_spawner_after_gazebo_spawn_robot,
         ]
-        + delay_robot_controller_spawners_after_joint_state_broadcaster_spawner
+        # + delay_robot_controller_spawners_after_joint_state_broadcaster_spawner
     )

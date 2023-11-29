@@ -17,7 +17,7 @@
                   <!-- <xacro:if value="${use_sim}"> -->
             <hardware>
                 <plugin>ign_ros2_control/IgnitionSystem</plugin>
-              </hardware>
+            </hardware>
             <joint name="joint1">
                 <param name="id">1</param>
                 <command_interface name="position"/>

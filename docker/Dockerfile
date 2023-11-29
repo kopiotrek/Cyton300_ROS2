@@ -7,6 +7,7 @@ RUN apt-get update \
     && apt-get install -y \
     nano \
     vim \
+    fzf \
     libgl1-mesa-dri \
     libnvidia-gl-470-server \
     && rm -rf /var/lib/apt/lists/*
@@ -77,7 +78,9 @@ WORKDIR /app
 # Copy the cyton_ros2 project
 COPY docker/cyton_ros2/src/ros2_RobotSimulation/Cyton src/Cyton
 
+
+
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash; \
-colcon build --packages-select dynamixel_hardware; \
+colcon build --packages-select dynamixel_hardware ign_ros2_control; \
 source install/setup.bash; \
 colcon build --packages-select cyton_ros2_gazebo cyton_moveit"
