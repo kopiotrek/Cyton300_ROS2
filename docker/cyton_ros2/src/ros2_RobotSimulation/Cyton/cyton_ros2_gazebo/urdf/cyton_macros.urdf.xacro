@@ -345,7 +345,7 @@
         </link>
 
         <!-- Eighth motor located here -->
-        <joint name="joint9" type="prismatic">
+        <joint name="joint9_mimic" type="prismatic">
             <parent link="link7" />
             <child link="link9" />
             <origin xyz="0.0178 0.00485 0.077225" rpy="0 0 0" />
