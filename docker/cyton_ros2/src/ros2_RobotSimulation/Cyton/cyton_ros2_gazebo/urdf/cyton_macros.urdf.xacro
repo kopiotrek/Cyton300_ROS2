@@ -345,7 +345,7 @@
         </link>
 
         <!-- Eighth motor located here -->
-        <joint name="joint9_mimic" type="prismatic">
+        <joint name="joint9" type="prismatic">
             <parent link="link7" />
             <child link="link9" />
             <origin xyz="0.0178 0.00485 0.077225" rpy="0 0 0" />
@@ -354,16 +354,7 @@
             <mimic joint="joint8" multiplier="-1"/>
             <axis xyz="1 0 0" />
         </joint>
-<!-- 
-        <joint name="joint9" type="prismatic">
-            <parent link="joint7" />
-            <child link="joint9" />
-            <origin xyz="0.0498 0.00485 0.077225" rpy="0 0 0" />
-            <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.017" upper="0.001" effort="100.0" velocity="1.0" />
-            <mimic joint="joint8" multiplier="-1"/>
-            <axis xyz="1 0 0" />
-        </joint> -->
+
 
         <link name="link9">
             <visual>
@@ -386,6 +377,7 @@
                     iyy="9.527084112726167e-05" iyz="0" izz="5.193749979697169e-05" />
             </inertial>
         </link>
+
 
         <!-- <xacro:if value="${virtual_ee}">
             <joint name="virtual_endeffector_joint" type="fixed">

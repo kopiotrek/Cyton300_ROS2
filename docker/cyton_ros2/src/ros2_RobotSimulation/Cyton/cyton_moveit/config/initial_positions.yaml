@@ -5,7 +5,7 @@ initial_positions:
   joint3: 0
   joint5: 0
   joint8: 0
-  joint9: 0
+  joint9_moveit: 0
   joint2: 0
   joint1: 0
   joint7: 0
