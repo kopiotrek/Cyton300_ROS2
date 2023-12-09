@@ -12,6 +12,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+from ament_index_python.packages import get_package_share_directory
+import os
 
 
 
@@ -65,8 +67,23 @@ def generate_launch_description():
             description="Robot controller to start.",
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "world",
+            default_value="box.sdf",
+            description="Robot controller to start.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            name="verbose",
+            default_value="false",
+            description='Set to "true" to run verbose logging.',
+        ),
+    )
 
 
+    cyton_ros2_gazebo_dir = get_package_share_directory("cyton_ros2_gazebo")
     # Initialize Arguments
     runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
@@ -76,6 +93,8 @@ def generate_launch_description():
     use_mock_hardware = LaunchConfiguration("use_mock_hardware")
     mock_sensor_commands = LaunchConfiguration("mock_sensor_commands")
     robot_controller = LaunchConfiguration("robot_controller")
+    world = LaunchConfiguration("world")
+    verbose = LaunchConfiguration("verbose")
 
 
     robot_controllers = PathJoinSubstitution(
@@ -127,12 +146,15 @@ def generate_launch_description():
     )
 
     # Gazebo nodes
+    # world_path = os.path.join(cyton_ros2_gazebo_dir, "worlds", world)
+    world_path = PathJoinSubstitution(
+                [FindPackageShare(cyton_ros2_gazebo_dir), "worlds", world]
+            )
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_ign_gazebo"), "/launch", "/ign_gazebo.launch.py"]
-        ),
-        launch_arguments={"ign_args": " -r -v 3 empty.sdf"}.items(),
-    )
+        ),              launch_arguments = {'ign_args': "-v 4 -r /app/src/cyton_ros2_gazebo/worlds/box.sdf"}.items()) 
 
     # Spawn robot
     gazebo_spawn_robot = Node(
