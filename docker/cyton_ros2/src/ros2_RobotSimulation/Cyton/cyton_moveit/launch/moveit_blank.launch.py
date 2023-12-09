@@ -1,9 +1,11 @@
 import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import Command, LaunchConfiguration
+from launch.actions import DeclareLaunchArgument, TimerAction
+from launch.substitutions import PathJoinSubstitution, Command, LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory
 from launch_ros.actions import Node, SetParameter
+from launch_ros.substitutions import FindPackageShare
+from launch.substitutions import Command
 from moveit_configs_utils import MoveItConfigsBuilder
 
 
@@ -11,7 +13,7 @@ def generate_launch_description():
     use_sim = LaunchConfiguration("use_sim")
     declare_use_sim_arg = DeclareLaunchArgument(
         "use_sim",
-        default_value="true",
+        default_value="False",
         description="Start robot in Gazebo simulation.",
     )
 
@@ -36,6 +38,7 @@ def generate_launch_description():
         "trajectory_execution.allowed_execution_duration_scaling": 2.0,
         "trajectory_execution.allowed_goal_duration_margin": 0.5,
         "trajectory_execution.allowed_start_tolerance": 0.0,
+        "use_sim_time": use_sim
     }
 
     move_group_params = [
@@ -50,9 +53,33 @@ def generate_launch_description():
         parameters=move_group_params
     )
 
+    rviz_config = PathJoinSubstitution(
+        [
+            FindPackageShare("cyton_moveit"),
+            "config",
+            "moveit.rviz",
+        ]
+    )
+
+    rviz_parameters = [
+        moveit_config.planning_pipelines,
+        moveit_config.robot_description_kinematics,
+        robot_description_content,
+         {"use_sim_time": use_sim}
+    ]
+
+    rviz_node = Node(
+        package="rviz2",
+        executable="rviz2",
+        arguments=["-d", rviz_config],
+        parameters=rviz_parameters,
+    )
+
+
     actions = [
         declare_use_sim_arg,
-        SetParameter(name="use_sim_time", value=use_sim),
+        # SetParameter(name="use_sim_time", value=use_sim),
         move_group_node,
+        rviz_node
     ]
     return LaunchDescription(actions)

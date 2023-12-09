@@ -10,7 +10,7 @@
         <xacro:cyton_ignition />
 
         <material name="blue">
-          <color rgba= "255 149 0 1"/>
+          <color rgba= "1 0 0 1"/>
         </material>
 
         <!-- Initial footprint motor used here -->
@@ -379,25 +379,12 @@
         </link>
 
 
-        <!-- <xacro:if value="${virtual_ee}">
-            <joint name="virtual_endeffector_joint" type="fixed">
-                <parent link="joint6" />
-                <child link="virtual_endeffector" />
-                <origin xyz="-0.002316 0.0079 0.079425" rpy="0 0 0" />
-            </joint>
-
-            <link name="virtual_endeffector">
-                <visual>
-                    <origin xyz="0 0 0" rpy="0 0 0" />
-                    <geometry>
-                        <sphere radius="0.002" />
-                    </geometry>
-                    <material name="grey">
-                        <color rgba="0.7 0.7 0.7 0.8" />
-                    </material>
-                </visual>
-            </link>
-        </xacro:if> -->
+        <!-- Dummy joint/link to prevent error with mimic joint -->
+        <joint name="joint9_mimic" type="fixed">
+            <parent link="world" />
+            <child link="dummy_mimic_fix" />
+        </joint>
+        <link name="dummy_mimic_fix"/>
     </xacro:macro>
 
 </robot>

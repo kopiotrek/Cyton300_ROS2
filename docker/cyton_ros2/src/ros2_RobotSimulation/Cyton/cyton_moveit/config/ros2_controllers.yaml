@@ -32,8 +32,3 @@ joint_trajectory_controller:
 gripper_action_controller:
   ros__parameters:
     joint: "joint8"
-    # command_interfaces:
-    #   - position
-    # state_interfaces:
-    #   - position
-    #   - velocity
