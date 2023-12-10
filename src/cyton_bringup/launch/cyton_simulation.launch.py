@@ -23,7 +23,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "runtime_config_package",
-            default_value="cyton_ros2_gazebo",
+            default_value="cyton_bringup",
             description='Package with the controller\'s configuration in "config" folder. \
         Usually the argument is not set, it enables use of a custom setup.',
         )
@@ -38,7 +38,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_package",
-            default_value="cyton_ros2_gazebo",
+            default_value="cyton_bringup",
             description="Description package with robot URDF/xacro files. Usually the argument \
         is not set, it enables use of a custom description.",
         )
@@ -81,9 +81,16 @@ def generate_launch_description():
             description='Set to "true" to run verbose logging.',
         ),
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            name="use_sim",
+            default_value="True",
+            description='Set to "true" to run simulation',
+        ),
+    )
 
 
-    cyton_ros2_gazebo_dir = get_package_share_directory("cyton_ros2_gazebo")
+    cyton_bringup_dir = get_package_share_directory("cyton_bringup")
     # Initialize Arguments
     runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
@@ -95,6 +102,7 @@ def generate_launch_description():
     robot_controller = LaunchConfiguration("robot_controller")
     world = LaunchConfiguration("world")
     verbose = LaunchConfiguration("verbose")
+    use_sim = LaunchConfiguration("use_sim")
 
 
     robot_controllers = PathJoinSubstitution(
@@ -105,31 +113,10 @@ def generate_launch_description():
     
 
     # Get URDF via xacro
-    robot_description_content = Command(
-        [
-            PathJoinSubstitution([FindExecutable(name="xacro")]),
-            " ",
-            PathJoinSubstitution(
-                [FindPackageShare(description_package), "urdf", description_file]
-            ),
-            " ",
-            "prefix:=",
-            prefix,
-            " ",
-            "use_mock_hardware:=false",
-            " ",
-            "mock_sensor_commands:=false",
-            " ",
-            "sim_gazebo_classic:=false",
-            " ",
-            "sim_gazebo:=true",
-            " ",
-            "simulation_controllers:=",
-            robot_controllers,
-            " ",
-        ]
-    )
-    robot_description = {"robot_description": robot_description_content}
+    xacro_file = os.path.join(get_package_share_directory('cyton_bringup'), 'urdf', 'cyton.urdf.xacro')
+    robot_description = {
+        'robot_description': Command(['xacro ', xacro_file, " use_sim:=", use_sim])
+    }
 
     robot_state_pub_node = Node(
         package="robot_state_publisher",
@@ -146,15 +133,15 @@ def generate_launch_description():
     )
 
     # Gazebo nodes
-    # world_path = os.path.join(cyton_ros2_gazebo_dir, "worlds", world)
+    # world_path = os.path.join(cyton_bringup_dir, "worlds", world)
     world_path = PathJoinSubstitution(
-                [FindPackageShare(cyton_ros2_gazebo_dir), "worlds", world]
+                [FindPackageShare(cyton_bringup_dir), "worlds", world]
             )
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_ign_gazebo"), "/launch", "/ign_gazebo.launch.py"]
-        ),              launch_arguments = {'ign_args': "-v 4 -r /app/src/cyton_ros2_gazebo/worlds/box.sdf"}.items()) 
+        ),              launch_arguments = {'ign_args': "-v 4 -r /app/src/cyton_bringup/worlds/box.sdf"}.items()) 
 
     # Spawn robot
     gazebo_spawn_robot = Node(

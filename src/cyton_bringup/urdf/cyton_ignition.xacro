@@ -57,12 +57,8 @@
 
     <gazebo>
       <plugin name="ign_ros2_control::IgnitionROS2ControlPlugin" filename="libign_ros2_control-system.so" >
-      <parameters> $(find cyton_ros2_gazebo)/config/cyton_controller.yaml </parameters>
-      <!-- <controller_manager_node_name>controller_manager</controller_manager_node_name> -->
-      <!-- <robotSimType>gazebo_ros2_control/DefaultRobotHWSim</robotSimType>
-            <robot_param>robot_description</robot_param>
-            <robot_param_node>robot_state_publisher</robot_param_node> -->
-    </plugin>
+      <parameters> $(find cyton_bringup)/config/cyton_controller.yaml </parameters>
+      </plugin>
     </gazebo>
 
     

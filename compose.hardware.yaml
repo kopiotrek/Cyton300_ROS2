@@ -1,6 +1,6 @@
 version: '3'
 services:
-  cyton_moveit_hardware:
+  cyton_hardware:
     build:
       context: ./
       dockerfile: docker/hardware/Dockerfile
@@ -23,4 +23,27 @@ services:
       - /dev/ttyUSB0:/dev/ttyUSB0
     stdin_open: true 
     tty: true
-    command: ros2 launch cyton_moveit moveit_blank.launch.py use_sim:=False
+    command: ros2 launch cyton_bringup cyton_hardware.launch.py
+  # cyton_moveit_hw:
+  #   build:
+  #     context: ./
+  #     dockerfile: docker/simulation/Dockerfile
+  #   image: cyton_hardware
+  #   user: ros
+  #   network_mode: host
+  #   ipc: host
+  #   environment:
+  #     - DISPLAY
+  #     - QT_X11_NO_MITSHM=1
+  #     - RMW_IMPLEMENTATION=${RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}
+  #     - CYCLONEDDS_URI=${CYCLONEDDS_URI}
+  #     - ROS_DOMAIN_ID
+  #   volumes:
+  #     - ./cyclonedds_ariadna.xml:/cyclonedds.xml
+  #     - ./src:/src
+  #     - /tmp/.X11-unix:/tmp/.X11-unix
+  #   devices:
+  #     - /dev/dri:/dev/dri
+  #   stdin_open: true 
+  #   tty: true
+  #   command: ros2 launch cyton_moveit moveit_blank.launch.py use_sim:=False

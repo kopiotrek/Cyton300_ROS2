@@ -1,6 +1,6 @@
 moveit_setup_assistant_config:
   urdf:
-    package: cyton_ros2_gazebo
+    package: cyton_bringup
     relative_path: urdf/cyton.urdf.xacro
   srdf:
     relative_path: config/cyton.srdf
