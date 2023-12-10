@@ -98,7 +98,7 @@ def generate_launch_description():
         parameters=[robot_description],
     )
 
-    ros2_control_config = os.path.join(get_package_share_directory('cyton_moveit'), 'config', 'ros2_controllers.yaml')
+    ros2_control_config = os.path.join(get_package_share_directory('cyton_bringup'), 'config', 'cyton_controller.yaml')
     ros2_control = Node(
             package="controller_manager",
             executable="ros2_control_node",
