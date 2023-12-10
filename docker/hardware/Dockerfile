@@ -84,5 +84,5 @@ COPY ./src/ src/
 
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash; \
 colcon build --packages-select dynamixel_hardware; \
-source install/setup.bash; \
+source /app/install/setup.bash; \
 colcon build --packages-select cyton_bringup cyton_moveit"

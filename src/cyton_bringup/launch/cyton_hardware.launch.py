@@ -102,7 +102,7 @@ def generate_launch_description():
     ros2_control = Node(
             package="controller_manager",
             executable="ros2_control_node",
-            parameters=[ros2_control_config],
+            parameters=[robot_description,ros2_control_config],
         )
 
     joint_state_broadcaster_spawner = Node(
