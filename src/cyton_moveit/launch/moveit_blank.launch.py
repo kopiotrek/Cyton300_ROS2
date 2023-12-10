@@ -65,7 +65,7 @@ def generate_launch_description():
         moveit_config.planning_pipelines,
         moveit_config.robot_description_kinematics,
         robot_description_content,
-         {"use_sim_time": False} #Problem with unresponsive efector-controlling ball
+         {"use_sim_time": use_sim} #Problem with unresponsive efector-controlling ball
     ]
 
     rviz_node = Node(
