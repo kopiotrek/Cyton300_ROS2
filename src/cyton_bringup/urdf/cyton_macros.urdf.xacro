@@ -325,16 +325,16 @@
 
         <link name="link8">
             <visual>
-                <origin xyz="0 0 -0.03" rpy="0 0 0" />
+                <origin xyz="0 0 -0.035" rpy="0 0 3.14" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/joint8.dae"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/joint9_stretched.dae"/>
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
-                <origin xyz="0 0 -0.03" rpy="0 0 0" />
+                <origin xyz="0 0 -0.035" rpy="0 0 3.14" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/joint8.stl"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/joint9_stretched.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -359,16 +359,17 @@
 
         <link name="link9">
             <visual>
-                <origin xyz="0 0 -0.03" rpy="0 0 0" />
+                <!-- <origin xyz="0 0 -0.03" rpy="0 0 0" /> -->
+                <origin xyz="0 0 -0.035" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/joint9.dae"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/joint9_stretched.dae"/>
                 </geometry>
                 <material name="blue"/>
             </visual>
             <collision>
-                <origin xyz="0 0 -0.03" rpy="0 0 0" />
+                <origin xyz="0 0 -0.035" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/joint9.stl"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/joint9_stretched.stl"/>
                 </geometry>
             </collision>
             <inertial>

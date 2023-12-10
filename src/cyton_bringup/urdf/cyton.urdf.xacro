@@ -16,6 +16,6 @@
   <joint name="world_joint" type="fixed">
     <parent link="world" />
     <child link = "base_footprint" />
-    <origin xyz="0.0 0.0 0.01" rpy="0.0 0.0 0.0" />
+    <origin xyz="0.0 0.0 0.0001" rpy="0.0 0.0 0.0" />
   </joint>
 </robot>
