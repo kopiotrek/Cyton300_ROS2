@@ -3,8 +3,7 @@
 Running on ROS Humble
 
 How to run:
-1. docker-compose up --build --d
-2. docker-compose exec cyton_service bash
+1. docker-compose -f compose.simulation.yaml up
 
 Notes:
 
@@ -17,10 +16,6 @@ Cyton consists of:
     - 1 AX-12A dynamixels
 
 # Test arm
-
-ros2 launch cyton_moveit bajor_move_group.launch.py 
-
-ros2 launch cyton_moveit bajor_moveit_rviz.launch.py 
 
 ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory control_msgs/action/FollowJointTrajectory "{
   trajectory: {
