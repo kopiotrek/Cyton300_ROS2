@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="box_inertial" params="x y z mass">
+    <inertial>
+      <mass value="${mass}" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="${0.6 * mass * (y*y + z*z)}" ixy="0.0" ixz="0.0"
+        iyy="${0.6 * mass * (x*x + z*z)}" iyz="0.0"
+        izz="${0.6 * mass * (x*x + y*y)}" />
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="battery_inertial" params="x y z mass">
+    <inertial>
+      <mass value="${mass}" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.002721" ixy="0.0" ixz="0.0"
+        iyy="0.006591" iyz="0.0"
+        izz="0.00563" />
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="swivel_inertial" params="x y z mass">
+    <inertial>
+      <mass value="${mass}" />
+      <origin xyz="0 0 0" />
+      <inertia  ixx="5.876536110680137e-06" ixy="0" ixz="0" iyy="6.883097132329522e-06" iyz="0" izz="7.981068845009006e-06" />
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="chassis_inertial" params="x y z mass">
+    <inertial>
+      <mass value="${mass}" />
+      <origin xyz="0 0 0" />
+      <inertia  ixx="0.000077" ixy="0" ixz="0" iyy="0.000173" iyz="0" izz="0.000124" />
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="drive_wheel_inertia" params="radius length mass xyz rpy">
+    <inertial>
+      <mass value="${mass}" />
+      <origin xyz="${xyz}" rpy="${rpy}" />
+      <inertia  ixx="0.0014555766001853741" ixy="0" ixz="0" iyy="0.0027740336319765913" iyz="0" izz="0.0014555766001853741" />
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="caster_wheel_inertia" params="radius length mass xyz rpy">
+    <inertial>
+      <mass value="${mass}" />
+      <origin xyz="${xyz}" rpy="${rpy}" />
+      <inertia  ixx="5.7040203734464354e-05" ixy="0" ixz="0" iyy="9.727481306215415e-05" iyz="0" izz="5.7040194247774674e-05" />
+    </inertial>
+  </xacro:macro>
+
+</robot>
