@@ -1,7 +1,0 @@
-**/build/
-**/install/
-**/log/
-**/.vscode/
-**/tuw_gazebo_wanderer/
-**.md
-rviz.launch.py

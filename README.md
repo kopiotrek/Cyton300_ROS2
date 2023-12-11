@@ -34,3 +34,6 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory contr
 Issues:
 Drgania - Nie można zapisać PID serw do uruchomienia, brak sterowania prędkością
 Problem z zegarem symulacji
+
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard /cmd_vel:=/diff_drive_controller/cmd_vel
