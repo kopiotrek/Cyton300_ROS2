@@ -16,7 +16,7 @@ def generate_launch_description():
     use_ros2_control = LaunchConfiguration('use_ros2_control')
 
     pkg_path = os.path.join(
-        get_package_share_directory('pioneer_cyton_description'))
+        get_package_share_directory('pioneer_description'))
     # xacro_file = os.path.join(pkg_path, 'description', 'robot.urdf.xacro')
     xacro_file = os.path.join(pkg_path, 'description',
                               'pioneer3dx', 'main.xacro')

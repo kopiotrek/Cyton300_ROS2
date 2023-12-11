@@ -38,7 +38,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_package",
-            default_value="cyton_bringup",
+            default_value="cyton_description",
             description="Description package with robot URDF/xacro files. Usually the argument \
         is not set, it enables use of a custom description.",
         )
@@ -113,7 +113,8 @@ def generate_launch_description():
     
 
     # Get URDF via xacro
-    xacro_file = os.path.join(get_package_share_directory('cyton_bringup'), 'urdf', 'cyton.urdf.xacro')
+    # xacro_file = os.path.join(get_package_share_directory(description_package), 'urdf', description_file)
+    xacro_file = PathJoinSubstitution([FindPackageShare(description_package), 'urdf', description_file])
     robot_description = {
         'robot_description': Command(['xacro ', xacro_file, " use_sim:=", use_sim])
     }

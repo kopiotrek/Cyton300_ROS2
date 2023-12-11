@@ -15,7 +15,7 @@ services:
       - CYCLONEDDS_URI=${CYCLONEDDS_URI}
       - ROS_DOMAIN_ID
     volumes:
-      - ./cyclonedds_ariadna.xml:/cyclonedds.xml
+      - ./cyclonedds.xml:/cyclonedds.xml
       - ./src:/src
       - /tmp/.X11-unix:/tmp/.X11-unix
     devices:

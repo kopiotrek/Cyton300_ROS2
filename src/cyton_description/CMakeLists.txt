@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(cyton_bringup)
+project(cyton_description)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -17,8 +17,6 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(ros2_control REQUIRED)
-find_package(ros2_controllers REQUIRED)
 
 find_package(urdf REQUIRED)
 find_package(xacro REQUIRED)
@@ -43,10 +41,8 @@ endif()
 
 install(
   DIRECTORY 
-    config
-    rviz
-    launch
-    worlds
+    urdf 
+    meshes
   DESTINATION 
     share/${PROJECT_NAME}
 )

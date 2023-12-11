@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   
-  <xacro:include filename="$(find pioneer_cyton_description)/description/inertia_tensors.xacro"/>
+  <xacro:include filename="$(find pioneer_description)/description/inertia_tensors.xacro"/>
   <xacro:include filename="chassis.xacro"/>
   <xacro:include filename="wheel.xacro"/>
   <xacro:include filename="battery_block.xacro"/>

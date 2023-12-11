@@ -3,13 +3,13 @@
   <xacro:arg name="use_sim" default="False"/>
   <xacro:arg name="initial_positions_file" default="$(find cyton_moveit)/config/initial_positions.yaml" />
 
-  <xacro:include filename="$(find cyton_bringup)/urdf/cyton_macros.urdf.xacro" />
+  <xacro:include filename="$(find cyton_description)/urdf/cyton_macros.urdf.xacro" />
 
   <xacro:if value="$(arg use_sim)">
-    <xacro:include filename="$(find cyton_bringup)/urdf/cyton_ignition.xacro" />
+    <xacro:include filename="$(find cyton_description)/urdf/cyton_ignition.xacro" />
   </xacro:if>
   <xacro:unless value="$(arg use_sim)">
-    <xacro:include filename="$(find cyton_bringup)/urdf/cyton.hardware.xacro" />
+    <xacro:include filename="$(find cyton_description)/urdf/cyton.hardware.xacro" />
   </xacro:unless>
   <xacro:cyton_robot/>
   <link name="world"/>

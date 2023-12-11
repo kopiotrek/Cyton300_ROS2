@@ -16,7 +16,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    package_name = 'pioneer_cyton_description'
+    package_name = 'pioneer_bringup'
     gazebo_ros_package_dir = get_package_share_directory('gazebo_ros')
     world_file_name = 'test_zone_v1.world'
 
@@ -80,7 +80,7 @@ def generate_launch_description():
     #         [os.path.join(gazebo_ros_package_dir, 'launch', 'gzclient.launch.py')])
     # )
 
-    world_file_name = "/app/src/cyton_bringup/worlds/box.sdf"
+    world_file_name = "empty.sdf"
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_ign_gazebo"), "/launch", "/ign_gazebo.launch.py"]

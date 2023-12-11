@@ -33,8 +33,11 @@ RUN apt-get update \
     ros-$ROS_DISTRO-ros2-controllers \
     ros-$ROS_DISTRO-gripper-controllers \
     # MoveIt
-    ros-$ROS_DISTRO-moveit
-
+    ros-$ROS_DISTRO-moveit \
+    # DynamixelHardware
+    ros-$ROS_DISTRO-dynamixel-workbench-toolbox \
+    && rm -rf /var/lib/apt/lists/*
+    
 RUN rosdep update
 
 
@@ -78,7 +81,7 @@ COPY ./src/ src/
 
 
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash; \
-colcon build --packages-select dynamixel_hardware; \
+colcon build --packages-select cyton_description dynamixel_hardware; \
 cd /app; \
 source install/setup.bash; \
 colcon build --packages-select cyton_bringup cyton_moveit"

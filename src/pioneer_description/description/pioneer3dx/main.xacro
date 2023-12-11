@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="pioneer3dx" >
 
-  <xacro:arg name="models_dir"       default="$(find pioneer_cyton_description)/description"/>
+  <xacro:arg name="models_dir"       default="$(find pioneer_description)/description"/>
   <xacro:arg name="robot_model"      default="pioneer3dx"/>
   <xacro:arg name="laser_model"      default="hokuyo"/>
   <xacro:arg name="namespace"        default="r0"/>

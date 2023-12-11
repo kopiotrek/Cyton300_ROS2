@@ -1,15 +1,5 @@
-cmake_minimum_required(VERSION 3.5)
-project(cyton_bringup)
-
-# Default to C99
-if(NOT CMAKE_C_STANDARD)
-  set(CMAKE_C_STANDARD 99)
-endif()
-
-# Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
-endif()
+cmake_minimum_required(VERSION 3.8)
+project(pioneer_description)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -17,18 +7,14 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(ros2_control REQUIRED)
-find_package(ros2_controllers REQUIRED)
-
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 find_package(urdf REQUIRED)
 find_package(xacro REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
-# find_package(realsense2_description REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -42,13 +28,10 @@ if(BUILD_TESTING)
 endif()
 
 install(
-  DIRECTORY 
-    config
-    rviz
-    launch
-    worlds
-  DESTINATION 
-    share/${PROJECT_NAME}
+  DIRECTORY
+    description
+  DESTINATION
+    share/${PROJECT_NAME}/
 )
 
 ament_package()

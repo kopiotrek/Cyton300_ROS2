@@ -75,4 +75,7 @@ COPY ./src/ src/
 
 
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash; \
-colcon build --packages-select pioneer_cyton_description;"
+                  colcon build --packages-select pioneer_description; \
+                  cd /app; \
+                  source install/setup.bash; \
+                  colcon build --packages-select pioneer_bringup"
