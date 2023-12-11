@@ -30,3 +30,7 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory contr
     ]
   }
 }"
+
+Issues:
+Drgania - Nie można zapisać PID serw do uruchomienia, brak sterowania prędkością
+Problem z zegarem symulacji

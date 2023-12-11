@@ -31,5 +31,6 @@ joint_trajectory_controller:
 gripper_action_controller:
   ros__parameters:
     joint: "joint8"
+    allow_stalling: True
 
       

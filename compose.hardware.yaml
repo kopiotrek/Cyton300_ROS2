@@ -27,7 +27,7 @@ services:
   cyton_moveit_hw:
     build:
       context: ./
-      dockerfile: docker/simulation/Dockerfile
+      dockerfile: docker/hardware/Dockerfile
     image: cyton_hardware
     user: ros
     network_mode: host

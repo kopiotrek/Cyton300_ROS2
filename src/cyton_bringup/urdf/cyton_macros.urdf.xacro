@@ -310,7 +310,7 @@
             <child link="link8" />
             <origin xyz="-0.02131 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.001" upper="0.017" effort="100.0" velocity="1.0" />
+            <limit lower="-0.002" upper="0.018" effort="0.1" velocity="1.0" />
             <axis xyz="1 0 0" />
         </joint>
 
@@ -351,7 +351,7 @@
             <child link="link9" />
             <origin xyz="0.0178 0.00485 0.077225" rpy="0 0 0" />
             <dynamics damping="0.5" friction="0.5"/>
-            <limit lower="-0.017" upper="0.001" effort="100.0" velocity="1.0" />
+            <limit lower="-0.018" upper="0.002" effort="0.1" velocity="1.0" />
             <mimic joint="joint8" multiplier="-1"/>
             <axis xyz="1 0 0" />
         </joint>
