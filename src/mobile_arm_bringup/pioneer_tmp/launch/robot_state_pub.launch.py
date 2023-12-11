@@ -13,7 +13,7 @@ import xacro
 def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time')
-    use_ros2_control = LaunchConfiguration('use_ros2_control')
+    use_sim = LaunchConfiguration('use_sim')
 
     pkg_path = os.path.join(
         get_package_share_directory('pioneer_description'))
@@ -21,7 +21,7 @@ def generate_launch_description():
     xacro_file = os.path.join(pkg_path, 'description',
                               'pioneer3dx', 'main.xacro')
     robot_description_config = Command(
-        ['xacro ', xacro_file, ' use_ros2_control:=', use_ros2_control])
+        ['xacro ', xacro_file, 'use_sim:=', use_sim])
 
     params = {'robot_description': robot_description_config,
               'use_sim_time': use_sim_time}
@@ -39,9 +39,9 @@ def generate_launch_description():
             default_value='true',
             description='Use sim time if true'),
         DeclareLaunchArgument(
-            'use_ros2_control',
+            'use_sim',
             default_value='true',
-            description='Use ros2_control if true'),
+            description='Use simulation'),
 
         node_robot_state_publisher
     ])

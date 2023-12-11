@@ -1,21 +1,23 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="pioneer3dx" >
 
-  <xacro:arg name="models_dir"       default="$(find pioneer_description)/description"/>
+  <xacro:arg name="models_dir"       default="$(find mobile_arm_description)/description"/>
   <xacro:arg name="robot_model"      default="pioneer3dx"/>
   <xacro:arg name="laser_model"      default="hokuyo"/>
+  <xacro:arg name="arm_model"        default="cyton"/>
   <xacro:arg name="namespace"        default="r0"/>
   <xacro:arg name="robot_name"       default="r0"/>
   <xacro:arg name="laser0_topic"     default="scan_raw"/>
   <xacro:arg name="laser0_visualize" default="true"/>
   <xacro:arg name="laser0_driver"    default="gpu"/>
-  <!-- <xacro:arg name="use_sim"          default="False"/> -->
+  <xacro:arg name="use_sim"          default="false"/>
 
     
   <xacro:property name="models_dir"    value="$(arg models_dir)"/>
   <xacro:property name="namespace"    value="$(arg namespace)"/>
   <xacro:property name="robot_model"   value="$(arg robot_model)"/>
   <xacro:property name="laser_model"   value="$(arg laser_model)"/>
+  <xacro:property name="arm_model"   value="$(arg arm_model)"/>
 
   <!-- Import Rviz colors -->
   <xacro:include filename="${models_dir}/materials.xacro" />
@@ -33,8 +35,8 @@
   <xacro:include filename="${models_dir}/${laser_model}/main.xacro"/>
   <xacro:laser name="laser0" parent="top" namespace="${namespace}" topic_name="$(arg laser0_topic)" frame_name="laser0" xyz="0.15 0.0 0.06" rpy="0 0 0" driver="$(arg laser0_driver)" visualize="$(arg laser0_visualize)"/> 
 
-  <!-- Cyton arm -->
-  <!-- <xacro:include filename="$(find cyton_bringup)/urdf/cyton.urdf.xacro" />
-  <xacro:cyton use_sim="$(use_sim)"/> -->
+  <!-- Arm -->
+  <xacro:include filename="${models_dir}/${arm_model}/urdf/main.xacro" />
+  <xacro:arm name="cyton" parent="top" xyz="0.0 0.0 0.0" rpy="0 0 0" use_sim="$(use_sim)"/>
 
 </robot>
