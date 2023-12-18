@@ -326,16 +326,16 @@
 
         <link name="link8">
             <visual>
-                <origin xyz="0 0.0 -0.035" rpy="0 0 0" />
+                <origin xyz="0 0.0 -0.04" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/link8.dae" scale="1.0 1.0 2.0"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/link8.dae" scale="1.0 1.0 2.2"/>
                 </geometry>
                 <material name="TopBlack"/>
             </visual>
             <collision>
-                <origin xyz="0 0.0 -0.035" rpy="0 0 0" />
+                <origin xyz="0 0.0 -0.04" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/link8.stl" scale="1.0 1.0 2.0"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/link8.stl" scale="1.0 1.0 2.2"/>
                 </geometry>
             </collision>
             <inertial>
@@ -360,16 +360,16 @@
 
         <link name="link9">
             <visual>
-                <origin xyz="0 0 -0.035" rpy="0 0 0" />
+                <origin xyz="0 0 -0.04" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/link9.dae" scale="1.0 1.0 2.0"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/visual/link9.dae" scale="1.0 1.0 2.2"/>
                 </geometry>
                 <material name="TopBlack"/>
             </visual>
             <collision>
-                <origin xyz="0 0 -0.035" rpy="0 0 0" />
+                <origin xyz="0 0 -0.04" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/link9.stl" scale="1.0 1.0 2.0"/>
+                    <mesh filename="file://$(find cyton_bringup)/meshes/collision/link9.stl" scale="1.0 1.0 2.2"/>
                 </geometry>
             </collision>
             <inertial>

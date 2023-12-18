@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="Pot02">
+    <static>false</static>
+    <link name="base_link">
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Pot02.dae</uri>
+            <scale>0.2 0.2 0.2</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name= "Cylinder001_visual">
+        <geometry>
+          <mesh>
+            <uri>meshes/Pot02.dae</uri>
+            <scale>0.2 0.2 0.2</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/Pot02_Albedo.png</albedo_map>
+              <normal_map>materials/textures/Pot02_Normal.png</normal_map>
+              <roughness_map>materials/textures/Pot02_Roughness.png</roughness_map>
+            </metal>
+          </pbr>
+          <!-- fallback to script if no PBR support-->
+          <script>
+            <uri>materials/scripts/</uri>
+            <uri>materials/textures/</uri>
+            <name>UrbanTile/Pot02_Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -141,7 +141,7 @@ def generate_launch_description():
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_ign_gazebo"), "/launch", "/ign_gazebo.launch.py"]
-        ),              launch_arguments = {'ign_args': "-v 4 -r /app/src/cyton_bringup/worlds/box.sdf"}.items()) 
+        ),              launch_arguments = {'ign_args': "-v 4 -r /app/src/cyton_bringup/worlds/default.sdf"}.items()) 
 
     # Spawn robot
     gazebo_spawn_robot = Node(
