@@ -12,6 +12,7 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <exec_depend>cyton_description</exec_depend>
   <exec_depend>ign_ros2_control</exec_depend>
   <exec_depend>dynamixel_hardware</exec_depend>
 

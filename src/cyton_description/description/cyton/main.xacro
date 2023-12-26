@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="cyton">
+
+  <xacro:macro name="arm" params="name parent use_sim xyz rpy" >
+    <xacro:arg name="use_sim" default="True"/>
+    <xacro:arg name="initial_positions_file" default="$(find mobile_arm_moveit)/config/initial_positions.yaml" />
+
+    <joint name="${parent}_${name}_joint" type="fixed">
+        <axis xyz="0 0 1" />
+        <origin xyz="${xyz}" rpy="${rpy}"/>
+        <parent link="${parent}"/>
+        <child link="arm_base_link"/>
+    </joint>
+
+    <xacro:include filename="$(arg models_dir)/cyton/cyton_macros.urdf.xacro" />
+    
+    <xacro:cyton_robot/>
+
+  </xacro:macro>
+</robot>

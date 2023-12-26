@@ -20,7 +20,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
     devices:
       - /dev/dri:/dev/dri
-      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyUSB1:/dev/ttyUSB0
     stdin_open: true 
     tty: true
     command: ros2 launch cyton_bringup cyton_hardware.launch.py
