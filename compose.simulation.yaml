@@ -22,7 +22,7 @@ services:
       - /dev/dri:/dev/dri
     stdin_open: true 
     tty: true
-    command: ros2 launch cyton_ros2_gazebo cyton_simulation.launch.py
+    command: ros2 launch cyton_bringup cyton_simulation.launch.py use_sim:=True
   cyton_moveit_sim:
     build:
       context: ./

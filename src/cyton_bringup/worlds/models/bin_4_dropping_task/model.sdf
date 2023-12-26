@@ -1,0 +1,25 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='bin_4_dropping_task'>
+    <link name='bin'>
+      <pose>0 0 0 0 0 0</pose>
+      <collision name ='bin_collision'>
+        <geometry>
+          <mesh>
+            <uri>meshes/bin_4_dropping_task.dae</uri>
+            <scale>0.2 0.3 0.3</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='bin_visual'>
+        <geometry>
+          <mesh>
+            <uri>meshes/bin_4_dropping_task.dae</uri>
+            <scale>0.2 0.3 0.3</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <static>true</static>
+  </model>
+</sdf>

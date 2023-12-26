@@ -16,7 +16,7 @@ def generate_launch_description():
     )
 
     moveit_config = MoveItConfigsBuilder("cyton", package_name="cyton_moveit").to_moveit_configs()
-    xacro_file = os.path.join(get_package_share_directory('cyton_ros2_gazebo'), 'urdf', 'cyton.urdf.xacro')
+    xacro_file = os.path.join(get_package_share_directory('cyton_bringup'), 'urdf', 'cyton.urdf.xacro')
     robot_description_content = {
         'robot_description': Command(['xacro ', xacro_file, " use_sim:=", use_sim])
     }

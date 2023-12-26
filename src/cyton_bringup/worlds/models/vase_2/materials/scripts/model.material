@@ -1,0 +1,14 @@
+
+material UrbanTile/Pot02_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Pot02_Albedo.png
+        }
+      }
+    }
+  }
